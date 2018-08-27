@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.FuncionarioDAO;
+import estaticos.EstaticosParaFuncionario;
 import model.Funcionario;
 
 public class FuncionarioBanco implements FuncionarioDAO {
@@ -70,7 +71,7 @@ public class FuncionarioBanco implements FuncionarioDAO {
 				funcionario.setIdade(rs.getInt("idade"));
 				funcionario.setTelefone(rs.getString("telefone"));
 				funcionario.setEmail(rs.getString("email"));
-				// funcionario.setFilial(rs.getString("filial"));
+				funcionario.setFilial(EstaticosParaFuncionario.achaFilial(rs.getInt("filial")));
 				funcionarios.add(funcionario);
 			}
 		} catch (SQLException e) {

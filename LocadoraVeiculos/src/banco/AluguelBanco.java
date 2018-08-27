@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.AluguelDAO;
+import estaticos.EstaticosParaAluguel;
 import model.Aluguel;
 
 public class AluguelBanco implements AluguelDAO {
@@ -59,8 +60,8 @@ public class AluguelBanco implements AluguelDAO {
 			while (rs.next()) {
 				Aluguel aluguel = new Aluguel();
 				aluguel.setCodigoaluguel(rs.getInt("codigoaluguel"));
-				// aluguel.setLocatario().getNome(rs.getInt("locatario"));
-				// aluguel.setCarroalugado(rs.getInt("carroalugado"));
+				aluguel.setLocatario(EstaticosParaAluguel.achaCliente(rs.getInt("locatario")));
+				aluguel.setCarroalugado(EstaticosParaAluguel.achaVeiculo(rs.getInt("carroalugado")));
 				aluguel.setDatainicio(rs.getDate("datainicio"));
 				aluguel.setDatafim(rs.getDate("datafim"));
 				aluguel.setSituacao(rs.getString("situacao"));

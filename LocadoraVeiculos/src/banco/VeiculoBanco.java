@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.VeiculoDAO;
+import estaticos.EstaticosParaVeiculos;
 import model.Veiculo;
 
 public class VeiculoBanco implements VeiculoDAO {
@@ -68,7 +69,7 @@ public class VeiculoBanco implements VeiculoDAO {
 				veiculo.setModelo(rs.getString("modelo"));
 				veiculo.setFabricante(rs.getString("fabricante"));
 				veiculo.setEstado(rs.getString("estado"));
-				// veiculo.setProprietario(rs.getInt("proprietario"));
+				veiculo.setProprietario(EstaticosParaVeiculos.achaFuncionario(rs.getInt("proprietario")));
 				veiculo.setStatus(rs.getString("status"));
 				veiculos.add(veiculo);
 			}
