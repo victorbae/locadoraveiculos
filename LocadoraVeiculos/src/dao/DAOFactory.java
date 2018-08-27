@@ -9,4 +9,6 @@ public interface DAOFactory {
 	FuncionarioDAO funcionarioDAO();
 
 	VeiculoDAO veiculoDAO();
+
+	AluguelDAO aluguelDAO();
 }

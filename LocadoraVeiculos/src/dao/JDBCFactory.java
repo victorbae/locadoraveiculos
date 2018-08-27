@@ -1,5 +1,6 @@
 package dao;
 
+import banco.AluguelBanco;
 import banco.ClienteBanco;
 import banco.FilialBanco;
 import banco.FuncionarioBanco;
@@ -25,5 +26,10 @@ public class JDBCFactory implements DAOFactory {
 	@Override
 	public VeiculoDAO veiculoDAO() {
 		return new VeiculoBanco();
+	}
+
+	@Override
+	public AluguelDAO aluguelDAO() {
+		return new AluguelBanco();
 	}
 }

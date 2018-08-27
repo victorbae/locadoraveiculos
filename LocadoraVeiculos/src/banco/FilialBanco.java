@@ -1,5 +1,10 @@
 package banco;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.FilialDAO;
@@ -9,7 +14,18 @@ public class FilialBanco implements FilialDAO {
 
 	@Override
 	public void inserir(Filial dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "insert into filiais (codigofilial,nomefilial,cidade,endereco,telefone) values(?,?,?,?,?)";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
+			stmt.setInt(1, dado.getCodigoFilial());
+			stmt.setString(2, dado.getNomefilial());
+			stmt.setString(3, dado.getCidade());
+			stmt.setString(4, dado.getEndereco());
+			stmt.setString(5, String.valueOf(dado.getTelefone()));
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -21,14 +37,36 @@ public class FilialBanco implements FilialDAO {
 
 	@Override
 	public void excluir(Filial dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "delete from filiais where id = ?";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
+			stmt.setInt(1, dado.getCodigoFilial());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
 	@Override
 	public List<Filial> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Filial> filials = new ArrayList<>();
+		try {
+			Statement stmt = ConexaoPrincipal.retornaconecao().createStatement();
+			ResultSet rs = stmt.executeQuery("select * from filiais");
+			while (rs.next()) {
+				Filial filial = new Filial();
+				filial.setCodigoFilial(rs.getInt("codigofilial"));
+				filial.setNomefilial(rs.getString("nomefilial"));
+				filial.setCidade(rs.getString("cidade"));
+				filial.setEndereco(rs.getString("endereco"));
+				filial.setTelefone(Long.valueOf(rs.getString("telefone")));
+				filials.add(filial);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return filials;
 	}
 
 }
