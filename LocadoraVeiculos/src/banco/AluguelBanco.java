@@ -35,7 +35,21 @@ public class AluguelBanco implements AluguelDAO {
 
 	@Override
 	public void alterar(Aluguel dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "update alugueis set locatario = ?,carroalugado = ?,datainicio = ?,datafim = ?,situacao = ?,valortotal = ? where codigoaluguel = ?";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
+
+			stmt.setString(1, dado.getLocatario().getNome());
+			stmt.setString(2, dado.getCarroalugado().getModelo());
+			stmt.setDate(3, (Date) dado.getDatainicio());
+			stmt.setDate(4, (Date) dado.getDatafim());
+			stmt.setString(5, dado.getSituacao());
+			stmt.setDouble(6, dado.getValortotal());
+			stmt.setInt(7, dado.getCodigoaluguel());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 

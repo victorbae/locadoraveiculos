@@ -37,7 +37,24 @@ public class FuncionarioBanco implements FuncionarioDAO {
 
 	@Override
 	public void alterar(Funcionario dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "update funcionarios set nome = ?,cargo = ?,cpf = ?,rg = ?,cnh = ?,idade = ?,telefone = ?,email = ?,filial = ? where codigocliente = ?";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
+
+			stmt.setString(1, dado.getNome());
+			stmt.setString(2, dado.getCargo());
+			stmt.setString(3, dado.getCpf());
+			stmt.setString(4, dado.getRg());
+			stmt.setString(5, dado.getCnh());
+			stmt.setInt(6, dado.getIdade());
+			stmt.setString(7, dado.getTelefone());
+			stmt.setString(8, dado.getEmail());
+			stmt.setInt(9, dado.getFilial().getCodigoFilial());
+			stmt.setInt(10, dado.getCodigoFuncionario());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 

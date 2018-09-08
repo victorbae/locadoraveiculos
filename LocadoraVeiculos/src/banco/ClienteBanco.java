@@ -34,7 +34,22 @@ public class ClienteBanco implements ClienteDAO {
 
 	@Override
 	public void alterar(Cliente dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "update clientes set nome = ?,cpf = ?,rg = ?,cnh = ?,idade = ?,telefone = ?,email = ? where codigocliente = ?";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
+
+			stmt.setString(1, dado.getNome());
+			stmt.setString(2, dado.getCpf());
+			stmt.setString(3, dado.getRg());
+			stmt.setString(4, dado.getCnh());
+			stmt.setInt(5, dado.getIdade());
+			stmt.setString(6, dado.getTelefone());
+			stmt.setString(7, dado.getEmail());
+			stmt.setInt(8, dado.getCodigoCliente());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 

@@ -31,7 +31,19 @@ public class FilialBanco implements FilialDAO {
 
 	@Override
 	public void alterar(Filial dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "update filiais set nomefilial = ?,cidade = ?,endereco = ?,telefone = ? where codigofilial = ?";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
+
+			stmt.setString(1, dado.getNomefilial());
+			stmt.setString(2, dado.getCidade());
+			stmt.setString(3, dado.getEndereco());
+			stmt.setString(4, String.valueOf(dado.getTelefone()));
+			stmt.setInt(5, dado.getCodigoFilial());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 

@@ -37,8 +37,25 @@ public class VeiculoBanco implements VeiculoDAO {
 
 	@Override
 	public void alterar(Veiculo dado) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "update veiculos set placa = ?," + "anofabricacao = ?," + "cor = ?," + "modelo = ?,"
+					+ "fabricante = ?," + "estado = ?," + "proprietario = ?," + "status= ? "
+					+ "where codigoveiculo = ?";
+			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
 
+			stmt.setString(1, dado.getPlaca());
+			stmt.setDate(2, (Date) dado.getAnofabricacao());
+			stmt.setString(3, dado.getCor());
+			stmt.setString(4, dado.getModelo());
+			stmt.setString(5, dado.getFabricante());
+			stmt.setString(6, dado.getEstado());
+			stmt.setInt(7, dado.getProprietario().getCodigoFuncionario());
+			stmt.setString(8, dado.getStatus());
+			stmt.setInt(9, dado.getCodigoveiculo());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
