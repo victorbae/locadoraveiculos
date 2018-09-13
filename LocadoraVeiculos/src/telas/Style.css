@@ -2,3 +2,6 @@
     .backgroundPrincipal{
     	 -fx-background-image: url("file:Imagens/imagembackground.jpg") ;
     }
+    .botoes{
+    	-fx-background-color: orange;
+    }

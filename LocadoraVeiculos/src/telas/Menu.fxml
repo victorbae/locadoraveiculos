@@ -5,53 +5,165 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-   <children>
-      <Pane prefHeight="650.0" prefWidth="1000.0">
-         <children>
-            <TabPane prefHeight="650.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Alugueis">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <TableView layoutX="17.0" layoutY="106.0" prefHeight="489.0" prefWidth="968.0">
-                                <columns>
-                                  <TableColumn prefWidth="46.0" text="#" />
-                                  <TableColumn prefWidth="104.0" text="Locatario" />
-                                    <TableColumn prefWidth="218.0" text="Carro Alugado" />
-                                    <TableColumn prefWidth="121.0" text="Data Início" />
-                                    <TableColumn prefWidth="129.0" text="Data Fim" />
-                                    <TableColumn prefWidth="194.0" text="Situação" />
-                                    <TableColumn minWidth="0.0" prefWidth="155.0" text="Valor Total" />
-                                </columns>
-                              </TableView>
-                              <Button layoutX="27.0" layoutY="42.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="265.0" text="Criar Novo Cadastro de Aluguel" />
-                              <TextField layoutX="645.0" layoutY="42.0" prefHeight="31.0" prefWidth="270.0" />
-                              <Label layoutX="573.0" layoutY="47.0" text="Pesquisar" />
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Veiculos">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-                  <Tab text="Clientes">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                  </Tab>
-                  <Tab text="Untitled Tab">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                  </Tab>
-              </tabs>
-            </TabPane>
-         </children>
-      </Pane>
-   </children>
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<Pane prefHeight="650.0" prefWidth="1000.0">
+			<children>
+				<TabPane prefHeight="650.0" prefWidth="1000.0"
+					tabClosingPolicy="UNAVAILABLE">
+					<tabs>
+						<Tab text="Alugueis">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0"
+									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+									<children>
+										<TableView layoutX="17.0" layoutY="106.0"
+											prefHeight="489.0" prefWidth="968.0">
+											<columns>
+												<TableColumn prefWidth="46.0" text="#" />
+												<TableColumn prefWidth="104.0" text="Locatario" />
+												<TableColumn prefWidth="218.0"
+													text="Carro Alugado" />
+												<TableColumn prefWidth="121.0"
+													text="Data Início" />
+												<TableColumn prefWidth="129.0" text="Data Fim" />
+												<TableColumn prefWidth="194.0" text="Situação" />
+												<TableColumn minWidth="0.0" prefWidth="155.0"
+													text="Valor Total" />
+											</columns>
+										</TableView>
+										<Button layoutX="14.0" layoutY="42.0"
+											mnemonicParsing="false" prefHeight="31.0" prefWidth="265.0"
+											text="Criar Novo Cadastro de Aluguel" />
+										<Button layoutX="653.0" layoutY="42.0"
+											mnemonicParsing="false" text="Editar Aluguel Selecionado" />
+										<Button layoutX="867.0" layoutY="42.0"
+											mnemonicParsing="false" text="Excluir Aluguel" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Veiculos">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0"
+									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+									<children>
+										<TableView layoutX="17.0" layoutY="106.0"
+											prefHeight="489.0" prefWidth="968.0">
+											<columns>
+												<TableColumn prefWidth="48.0" text="#" />
+												<TableColumn prefWidth="102.0" text="Placa" />
+												<TableColumn prefWidth="151.0"
+													text="Ano De Fabricação" />
+												<TableColumn prefWidth="94.0" text="Cor" />
+												<TableColumn prefWidth="101.0" text="Modelo" />
+												<TableColumn prefWidth="162.0" text="Fabricante" />
+												<TableColumn prefWidth="75.0" text="Estado" />
+												<TableColumn prefWidth="145.0"
+													text="Propretário" />
+												<TableColumn prefWidth="94.0" text="Status" />
+											</columns>
+										</TableView>
+										<Button layoutX="14.0" layoutY="42.0"
+											mnemonicParsing="false" text="Cadastrar Veiculos" />
+										<Button layoutX="663.0" layoutY="42.0"
+											mnemonicParsing="false" text="Editar Veiculo Selecionado" />
+										<Button layoutX="869.0" layoutY="42.0"
+											mnemonicParsing="false" text="Excluir Veiculo" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Clientes">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0"
+									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+									<children>
+										<TableView layoutX="17.0" layoutY="106.0"
+											prefHeight="489.0" prefWidth="968.0">
+											<columns>
+												<TableColumn prefWidth="32.0" text="#" />
+												<TableColumn prefWidth="153.0" text="Nome" />
+												<TableColumn minWidth="0.0" prefWidth="131.0"
+													text="CPF" />
+												<TableColumn prefWidth="144.0" text="CNH" />
+												<TableColumn prefWidth="109.0" text="RG" />
+												<TableColumn prefWidth="49.0" text="Idade" />
+												<TableColumn prefWidth="125.0" text="Telefone" />
+												<TableColumn prefWidth="150.0" text="E-mail" />
+												<TableColumn prefWidth="74.0" text="Locando?" />
+											</columns>
+										</TableView>
+										<Button layoutX="14.0" layoutY="42.0"
+											mnemonicParsing="false" text="Adicionar Cliente" />
+										<Button layoutX="597.0" layoutY="42.0"
+											mnemonicParsing="false"
+											text="Editar Dados do Cliente Selecionado" />
+										<Button layoutX="873.0" layoutY="42.0"
+											mnemonicParsing="false" text="Excluir Cliente" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Histórico">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0"
+									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+									<children>
+										<TableView layoutX="14.0" layoutY="14.0"
+											prefHeight="582.0" prefWidth="972.0">
+											<columns>
+												<TableColumn prefWidth="46.0" text="#" />
+												<TableColumn prefWidth="104.0" text="Locatario" />
+												<TableColumn prefWidth="218.0"
+													text="Carro Alugado" />
+												<TableColumn prefWidth="121.0"
+													text="Data Início" />
+												<TableColumn prefWidth="129.0" text="Data Fim" />
+												<TableColumn prefWidth="194.0" text="Situação" />
+												<TableColumn minWidth="0.0" prefWidth="155.0"
+													text="Valor Total" />
+											</columns>
+										</TableView>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Filiais">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0"
+									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+									<children>
+										<TableView layoutX="17.0" layoutY="106.0"
+											prefHeight="489.0" prefWidth="968.0">
+											<columns>
+												<TableColumn prefWidth="40.0" text="#" />
+												<TableColumn prefWidth="171.0"
+													text="Nome Filial" />
+												<TableColumn prefWidth="176.0" text="Cidade" />
+												<TableColumn prefWidth="348.0" text="Endereço" />
+												<TableColumn prefWidth="220.0" text="Telefone" />
+											</columns>
+										</TableView>
+										<Button layoutX="14.0" layoutY="42.0"
+											mnemonicParsing="false" text="Adicionar Nova Filial" />
+										<Button layoutX="890.0" layoutY="42.0"
+											mnemonicParsing="false" text="Excluir Filial" />
+										<Button layoutX="701.0" layoutY="42.0"
+											mnemonicParsing="false" text="Editar Filial Selecionada" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+					</tabs>
+				</TabPane>
+			</children>
+		</Pane>
+	</children>
 </AnchorPane>
