@@ -1,6 +1,7 @@
 package principal;
 
 import java.sql.SQLException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,14 +16,14 @@ public class Main extends Application {
 
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			root = (BorderPane) FXMLLoader.load(getClass().getResource("/telas/TelaPai.fxml"));
+			root = (BorderPane) FXMLLoader.load(getClass().getResource("/fxmls/TelaPai.fxml"));
 			Scene scene = new Scene(root, 1000, 650);
-			scene.getStylesheets().add(getClass().getResource("/telas/Style.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/fxmls/Style.css").toExternalForm());
 			primaryStage.setTitle("Login");
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(new Image("file:/Imagens/imagembackground.jpg"));
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/telas/TelaLogin.fxml"));
+			loader.setLocation(getClass().getResource("/fxmls/TelaLogin.fxml"));
 			AnchorPane agenciaView = (AnchorPane) loader.load();
 			root.setCenter(agenciaView);
 			primaryStage.show();

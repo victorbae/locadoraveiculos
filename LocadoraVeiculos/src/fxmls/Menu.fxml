@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMenu">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMenu">
 	<children>
 		<Pane prefHeight="650.0" prefWidth="1000.0">
 			<children>
@@ -81,25 +84,6 @@
 								</AnchorPane>
 							</content>
 						</Tab>
-						<Tab text="Histórico">
-							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
-									<children>
-										<TableView layoutX="14.0" layoutY="14.0" prefHeight="582.0" prefWidth="972.0">
-											<columns>
-												<TableColumn fx:id="tcIdHistoricoAluguel" prefWidth="46.0" text="#" />
-												<TableColumn fx:id="tcHistoricoLocatario" prefWidth="104.0" text="Locatario" />
-												<TableColumn fx:id="tcHistoricoCarroAlugado" prefWidth="218.0" text="Carro Alugado" />
-												<TableColumn fx:id="tcHistoricoDataInicio" prefWidth="121.0" text="Data Início" />
-												<TableColumn fx:id="tcHistoricoDataFim" prefWidth="129.0" text="Data Fim" />
-												<TableColumn fx:id="tcHistoricoSituacao" prefWidth="194.0" text="Situação" />
-												<TableColumn fx:id="tcHistoricoValorTotal" minWidth="0.0" prefWidth="155.0" text="Valor Total" />
-											</columns>
-										</TableView>
-									</children>
-								</AnchorPane>
-							</content>
-						</Tab>
 						<Tab text="Filiais">
 							<content>
 								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
@@ -116,6 +100,25 @@
 										<Button fx:id="btNewFilial" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#novaFilial" text="Adicionar Nova Filial" />
 										<Button fx:id="btExcluirFilial" layoutX="890.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluirFilial" text="Excluir Filial" />
 										<Button fx:id="btEditFilial" layoutX="701.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarFilial" text="Editar Filial Selecionada" />
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Histórico">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
+									<children>
+										<TableView layoutX="14.0" layoutY="14.0" prefHeight="582.0" prefWidth="972.0">
+											<columns>
+												<TableColumn fx:id="tcIdHistoricoAluguel" prefWidth="46.0" text="#" />
+												<TableColumn fx:id="tcHistoricoLocatario" prefWidth="104.0" text="Locatario" />
+												<TableColumn fx:id="tcHistoricoCarroAlugado" prefWidth="218.0" text="Carro Alugado" />
+												<TableColumn fx:id="tcHistoricoDataInicio" prefWidth="121.0" text="Data Início" />
+												<TableColumn fx:id="tcHistoricoDataFim" prefWidth="129.0" text="Data Fim" />
+												<TableColumn fx:id="tcHistoricoSituacao" prefWidth="194.0" text="Situação" />
+												<TableColumn fx:id="tcHistoricoValorTotal" minWidth="0.0" prefWidth="155.0" text="Valor Total" />
+											</columns>
+										</TableView>
 									</children>
 								</AnchorPane>
 							</content>

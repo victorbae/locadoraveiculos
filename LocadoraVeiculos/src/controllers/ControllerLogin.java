@@ -32,7 +32,7 @@ public class ControllerLogin {
 
 	void proximaTela() {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/telas/Menu.fxml"));
+		loader.setLocation(getClass().getResource("/fxmls/Menu.fxml"));
 		try {
 			AnchorPane agenciaView = (AnchorPane) loader.load();
 			Main.root.setCenter(agenciaView);
