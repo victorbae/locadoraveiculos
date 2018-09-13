@@ -5,129 +5,95 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8"
-	xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMenu">
 	<children>
 		<Pane prefHeight="650.0" prefWidth="1000.0">
 			<children>
-				<TabPane prefHeight="650.0" prefWidth="1000.0"
-					tabClosingPolicy="UNAVAILABLE">
+				<TabPane prefHeight="650.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
 					<tabs>
 						<Tab text="Alugueis">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0"
-									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
 									<children>
-										<TableView layoutX="17.0" layoutY="106.0"
-											prefHeight="489.0" prefWidth="968.0">
+										<TableView layoutX="17.0" layoutY="106.0" prefHeight="489.0" prefWidth="968.0">
 											<columns>
-												<TableColumn prefWidth="46.0" text="#" />
-												<TableColumn prefWidth="104.0" text="Locatario" />
-												<TableColumn prefWidth="218.0"
-													text="Carro Alugado" />
-												<TableColumn prefWidth="121.0"
-													text="Data Início" />
-												<TableColumn prefWidth="129.0" text="Data Fim" />
-												<TableColumn prefWidth="194.0" text="Situação" />
-												<TableColumn minWidth="0.0" prefWidth="155.0"
-													text="Valor Total" />
+												<TableColumn fx:id="tcIdAluguel" prefWidth="46.0" text="#" />
+												<TableColumn fx:id="tcLocatario" prefWidth="104.0" text="Locatario" />
+												<TableColumn fx:id="tcCarroAlugado" prefWidth="218.0" text="Carro Alugado" />
+												<TableColumn fx:id="tcDataInicio" prefWidth="121.0" text="Data Início" />
+												<TableColumn fx:id="tcDataFim" prefWidth="129.0" text="Data Fim" />
+												<TableColumn fx:id="tcSituacao" prefWidth="194.0" text="Situação" />
+												<TableColumn fx:id="tcValorTotal" minWidth="0.0" prefWidth="155.0" text="Valor Total" />
 											</columns>
 										</TableView>
-										<Button layoutX="14.0" layoutY="42.0"
-											mnemonicParsing="false" prefHeight="31.0" prefWidth="265.0"
-											text="Criar Novo Cadastro de Aluguel" />
-										<Button layoutX="653.0" layoutY="42.0"
-											mnemonicParsing="false" text="Editar Aluguel Selecionado" />
-										<Button layoutX="867.0" layoutY="42.0"
-											mnemonicParsing="false" text="Excluir Aluguel" />
+										<Button fx:id="btNewAluguel" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#criarNovoAluguel" prefHeight="31.0" prefWidth="265.0" text="Criar Novo Cadastro de Aluguel" />
+										<Button fx:id="btEditAluguel" layoutX="653.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarAluguel" text="Editar Aluguel Selecionado" />
+										<Button fx:id="btExcluirAluguel" layoutX="867.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluirAluguel" text="Excluir Aluguel" />
 									</children>
 								</AnchorPane>
 							</content>
 						</Tab>
 						<Tab text="Veiculos">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0"
-									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
 									<children>
-										<TableView layoutX="17.0" layoutY="106.0"
-											prefHeight="489.0" prefWidth="968.0">
+										<TableView layoutX="17.0" layoutY="106.0" prefHeight="489.0" prefWidth="968.0">
 											<columns>
-												<TableColumn prefWidth="48.0" text="#" />
-												<TableColumn prefWidth="102.0" text="Placa" />
-												<TableColumn prefWidth="151.0"
-													text="Ano De Fabricação" />
-												<TableColumn prefWidth="94.0" text="Cor" />
-												<TableColumn prefWidth="101.0" text="Modelo" />
-												<TableColumn prefWidth="162.0" text="Fabricante" />
-												<TableColumn prefWidth="75.0" text="Estado" />
-												<TableColumn prefWidth="145.0"
-													text="Propretário" />
-												<TableColumn prefWidth="94.0" text="Status" />
+												<TableColumn fx:id="tcIdVeiculo" prefWidth="48.0" text="#" />
+												<TableColumn fx:id="tcPlaca" prefWidth="102.0" text="Placa" />
+												<TableColumn fx:id="tcAnoFabricacao" prefWidth="151.0" text="Ano De Fabricação" />
+												<TableColumn fx:id="tcCor" prefWidth="94.0" text="Cor" />
+												<TableColumn fx:id="tcModelo" prefWidth="101.0" text="Modelo" />
+												<TableColumn fx:id="tcFabricante" prefWidth="162.0" text="Fabricante" />
+												<TableColumn fx:id="tcEstado" prefWidth="75.0" text="Estado" />
+												<TableColumn fx:id="tcPropretario" prefWidth="145.0" text="Propretário" />
+												<TableColumn fx:id="tcStatus" prefWidth="94.0" text="Status" />
 											</columns>
 										</TableView>
-										<Button layoutX="14.0" layoutY="42.0"
-											mnemonicParsing="false" text="Cadastrar Veiculos" />
-										<Button layoutX="663.0" layoutY="42.0"
-											mnemonicParsing="false" text="Editar Veiculo Selecionado" />
-										<Button layoutX="869.0" layoutY="42.0"
-											mnemonicParsing="false" text="Excluir Veiculo" />
+										<Button fx:id="btCadastrarVeiculos" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#cadastrarVeiculos" text="Cadastrar Veiculos" />
+										<Button fx:id="btEditVeiculo" layoutX="663.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarVeiculo" text="Editar Veiculo Selecionado" />
+										<Button fx:id="btExcluirVeiculo" layoutX="869.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluirVeiculo" text="Excluir Veiculo" />
 									</children>
 								</AnchorPane>
 							</content>
 						</Tab>
 						<Tab text="Clientes">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0"
-									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
 									<children>
-										<TableView layoutX="17.0" layoutY="106.0"
-											prefHeight="489.0" prefWidth="968.0">
+										<TableView layoutX="17.0" layoutY="106.0" prefHeight="489.0" prefWidth="968.0">
 											<columns>
-												<TableColumn prefWidth="32.0" text="#" />
-												<TableColumn prefWidth="153.0" text="Nome" />
-												<TableColumn minWidth="0.0" prefWidth="131.0"
-													text="CPF" />
-												<TableColumn prefWidth="144.0" text="CNH" />
-												<TableColumn prefWidth="109.0" text="RG" />
-												<TableColumn prefWidth="49.0" text="Idade" />
-												<TableColumn prefWidth="125.0" text="Telefone" />
-												<TableColumn prefWidth="150.0" text="E-mail" />
-												<TableColumn prefWidth="74.0" text="Locando?" />
+												<TableColumn fx:id="tcIdCliente" prefWidth="32.0" text="#" />
+												<TableColumn fx:id="tcNomeCliente" prefWidth="153.0" text="Nome" />
+												<TableColumn fx:id="tcCPF" minWidth="0.0" prefWidth="131.0" text="CPF" />
+												<TableColumn fx:id="tcCNH" prefWidth="144.0" text="CNH" />
+												<TableColumn fx:id="tcRG" prefWidth="109.0" text="RG" />
+												<TableColumn fx:id="tcIdade" prefWidth="49.0" text="Idade" />
+												<TableColumn fx:id="tcTelefoneCliente" prefWidth="125.0" text="Telefone" />
+												<TableColumn fx:id="tcEmail" prefWidth="150.0" text="E-mail" />
+												<TableColumn fx:id="tcLocando" prefWidth="74.0" text="Locando?" />
 											</columns>
 										</TableView>
-										<Button layoutX="14.0" layoutY="42.0"
-											mnemonicParsing="false" text="Adicionar Cliente" />
-										<Button layoutX="597.0" layoutY="42.0"
-											mnemonicParsing="false"
-											text="Editar Dados do Cliente Selecionado" />
-										<Button layoutX="873.0" layoutY="42.0"
-											mnemonicParsing="false" text="Excluir Cliente" />
+										<Button fx:id="btNewCliente" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#adicionarCliente" text="Adicionar Cliente" />
+										<Button fx:id="btEditCliente" layoutX="597.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar Dados do Cliente Selecionado" />
+										<Button fx:id="btExcluirCliente" layoutX="873.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir Cliente" />
 									</children>
 								</AnchorPane>
 							</content>
 						</Tab>
 						<Tab text="Histórico">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0"
-									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
 									<children>
-										<TableView layoutX="14.0" layoutY="14.0"
-											prefHeight="582.0" prefWidth="972.0">
+										<TableView layoutX="14.0" layoutY="14.0" prefHeight="582.0" prefWidth="972.0">
 											<columns>
-												<TableColumn prefWidth="46.0" text="#" />
-												<TableColumn prefWidth="104.0" text="Locatario" />
-												<TableColumn prefWidth="218.0"
-													text="Carro Alugado" />
-												<TableColumn prefWidth="121.0"
-													text="Data Início" />
-												<TableColumn prefWidth="129.0" text="Data Fim" />
-												<TableColumn prefWidth="194.0" text="Situação" />
-												<TableColumn minWidth="0.0" prefWidth="155.0"
-													text="Valor Total" />
+												<TableColumn fx:id="tcIdHistoricoAluguel" prefWidth="46.0" text="#" />
+												<TableColumn fx:id="tcHistoricoLocatario" prefWidth="104.0" text="Locatario" />
+												<TableColumn fx:id="tcHistoricoCarroAlugado" prefWidth="218.0" text="Carro Alugado" />
+												<TableColumn fx:id="tcHistoricoDataInicio" prefWidth="121.0" text="Data Início" />
+												<TableColumn fx:id="tcHistoricoDataFim" prefWidth="129.0" text="Data Fim" />
+												<TableColumn fx:id="tcHistoricoSituacao" prefWidth="194.0" text="Situação" />
+												<TableColumn fx:id="tcHistoricoValorTotal" minWidth="0.0" prefWidth="155.0" text="Valor Total" />
 											</columns>
 										</TableView>
 									</children>
@@ -136,27 +102,20 @@
 						</Tab>
 						<Tab text="Filiais">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0"
-									styleClass="backgroundPrincipal" stylesheets="@Style.css">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
 									<children>
-										<TableView layoutX="17.0" layoutY="106.0"
-											prefHeight="489.0" prefWidth="968.0">
+										<TableView layoutX="17.0" layoutY="106.0" prefHeight="489.0" prefWidth="968.0">
 											<columns>
-												<TableColumn prefWidth="40.0" text="#" />
-												<TableColumn prefWidth="171.0"
-													text="Nome Filial" />
-												<TableColumn prefWidth="176.0" text="Cidade" />
-												<TableColumn prefWidth="348.0" text="Endereço" />
-												<TableColumn prefWidth="220.0" text="Telefone" />
+												<TableColumn fx:id="tcIdFilial" prefWidth="40.0" text="#" />
+												<TableColumn fx:id="tcNomeFilial" prefWidth="171.0" text="Nome Filial" />
+												<TableColumn fx:id="tcCidadeFilial" prefWidth="176.0" text="Cidade" />
+												<TableColumn fx:id="tcEnderecoFilial" prefWidth="348.0" text="Endereço" />
+												<TableColumn fx:id="tcTelefoneFilial" prefWidth="220.0" text="Telefone" />
 											</columns>
 										</TableView>
-										<Button layoutX="14.0" layoutY="42.0"
-											mnemonicParsing="false" text="Adicionar Nova Filial" />
-										<Button layoutX="890.0" layoutY="42.0"
-											mnemonicParsing="false" text="Excluir Filial" />
-										<Button layoutX="701.0" layoutY="42.0"
-											mnemonicParsing="false" text="Editar Filial Selecionada" />
+										<Button fx:id="btNewFilial" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#novaFilial" text="Adicionar Nova Filial" />
+										<Button fx:id="btExcluirFilial" layoutX="890.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluirFilial" text="Excluir Filial" />
+										<Button fx:id="btEditFilial" layoutX="701.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarFilial" text="Editar Filial Selecionada" />
 									</children>
 								</AnchorPane>
 							</content>
