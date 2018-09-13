@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane prefHeight="650.0" prefWidth="1000.0">
+         <children>
+            <TabPane prefHeight="650.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Alugueis">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="17.0" layoutY="106.0" prefHeight="489.0" prefWidth="968.0">
+                                <columns>
+                                  <TableColumn prefWidth="46.0" text="#" />
+                                  <TableColumn prefWidth="104.0" text="Locatario" />
+                                    <TableColumn prefWidth="218.0" text="Carro Alugado" />
+                                    <TableColumn prefWidth="121.0" text="Data Início" />
+                                    <TableColumn prefWidth="129.0" text="Data Fim" />
+                                    <TableColumn prefWidth="194.0" text="Situação" />
+                                    <TableColumn minWidth="0.0" prefWidth="155.0" text="Valor Total" />
+                                </columns>
+                              </TableView>
+                              <Button layoutX="27.0" layoutY="42.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="265.0" text="Criar Novo Cadastro de Aluguel" />
+                              <TextField layoutX="645.0" layoutY="42.0" prefHeight="31.0" prefWidth="270.0" />
+                              <Label layoutX="573.0" layoutY="47.0" text="Pesquisar" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Veiculos">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                  <Tab text="Clientes">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Untitled Tab">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
