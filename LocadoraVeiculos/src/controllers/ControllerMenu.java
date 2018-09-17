@@ -8,64 +8,91 @@ import javafx.scene.control.TableColumn;
 public class ControllerMenu {
 
 	@FXML
-	private TableColumn<?, ?> tcStatus;
+	private TableColumn<?, ?> tcIdAluguel;
 
 	@FXML
-	private Button btEditFilial;
+	private TableColumn<?, ?> tcLocatario;
 
 	@FXML
-	private TableColumn<?, ?> tcCor;
+	private TableColumn<?, ?> tcCarroAlugado;
 
 	@FXML
 	private TableColumn<?, ?> tcDataInicio;
 
 	@FXML
+	private TableColumn<?, ?> tcDataFim;
+
+	@FXML
 	private TableColumn<?, ?> tcSituacao;
-
-	@FXML
-	private TableColumn<?, ?> tcPlaca;
-
-	@FXML
-	private TableColumn<?, ?> tcEnderecoFilial;
-
-	@FXML
-	private Button btExcluirFilial;
-
-	@FXML
-	private TableColumn<?, ?> tcIdade;
-
-	@FXML
-	private TableColumn<?, ?> tcTelefoneFilial;
-
-	@FXML
-	private TableColumn<?, ?> tcIdHistoricoAluguel;
 
 	@FXML
 	private TableColumn<?, ?> tcValorTotal;
 
 	@FXML
-	private TableColumn<?, ?> tcIdAluguel;
+	private Button btNewAluguel;
 
 	@FXML
-	private Button btExcluirCliente;
-
-	@FXML
-	private TableColumn<?, ?> tcHistoricoSituacao;
-
-	@FXML
-	private Button btNewCliente;
+	private Button btEditAluguel;
 
 	@FXML
 	private Button btExcluirAluguel;
 
 	@FXML
-	private TableColumn<?, ?> tcNomeCliente;
+	private TableColumn<?, ?> tcIdVeiculo;
+
+	@FXML
+	private TableColumn<?, ?> tcPlaca;
+
+	@FXML
+	private TableColumn<?, ?> tcAnoFabricacao;
+
+	@FXML
+	private TableColumn<?, ?> tcCor;
+
+	@FXML
+	private TableColumn<?, ?> tcModelo;
 
 	@FXML
 	private TableColumn<?, ?> tcFabricante;
 
 	@FXML
+	private TableColumn<?, ?> tcEstado;
+
+	@FXML
+	private TableColumn<?, ?> tcPropretario;
+
+	@FXML
+	private TableColumn<?, ?> tcStatus;
+
+	@FXML
+	private Button btCadastrarVeiculos;
+
+	@FXML
+	private Button btEditVeiculo;
+
+	@FXML
 	private Button btExcluirVeiculo;
+
+	@FXML
+	private TableColumn<?, ?> tcIdCliente;
+
+	@FXML
+	private TableColumn<?, ?> tcNomeCliente;
+
+	@FXML
+	private TableColumn<?, ?> tcCPF;
+
+	@FXML
+	private TableColumn<?, ?> tcCNH;
+
+	@FXML
+	private TableColumn<?, ?> tcRG;
+
+	@FXML
+	private TableColumn<?, ?> tcIdade;
+
+	@FXML
+	private TableColumn<?, ?> tcTelefoneCliente;
 
 	@FXML
 	private TableColumn<?, ?> tcEmail;
@@ -74,67 +101,13 @@ public class ControllerMenu {
 	private TableColumn<?, ?> tcLocando;
 
 	@FXML
-	private TableColumn<?, ?> tcCidadeFilial;
-
-	@FXML
-	private TableColumn<?, ?> tcIdCliente;
-
-	@FXML
-	private TableColumn<?, ?> tcAnoFabricacao;
-
-	@FXML
-	private TableColumn<?, ?> tcTelefoneCliente;
-
-	@FXML
-	private TableColumn<?, ?> tcCPF;
-
-	@FXML
-	private TableColumn<?, ?> tcLocatario;
-
-	@FXML
-	private Button btCadastrarVeiculos;
-
-	@FXML
-	private TableColumn<?, ?> tcHistoricoDataInicio;
-
-	@FXML
-	private TableColumn<?, ?> tcDataFim;
+	private Button btNewCliente;
 
 	@FXML
 	private Button btEditCliente;
 
 	@FXML
-	private Button btEditVeiculo;
-
-	@FXML
-	private Button btNewFilial;
-
-	@FXML
-	private TableColumn<?, ?> tcCarroAlugado;
-
-	@FXML
-	private TableColumn<?, ?> tcRG;
-
-	@FXML
-	private TableColumn<?, ?> tcHistoricoLocatario;
-
-	@FXML
-	private Button btEditAluguel;
-
-	@FXML
-	private TableColumn<?, ?> tcHistoricoValorTotal;
-
-	@FXML
-	private TableColumn<?, ?> tcPropretario;
-
-	@FXML
-	private TableColumn<?, ?> tcHistoricoDataFim;
-
-	@FXML
-	private TableColumn<?, ?> tcHistoricoCarroAlugado;
-
-	@FXML
-	private Button btNewAluguel;
+	private Button btExcluirCliente;
 
 	@FXML
 	private TableColumn<?, ?> tcIdFilial;
@@ -143,16 +116,53 @@ public class ControllerMenu {
 	private TableColumn<?, ?> tcNomeFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcIdVeiculo;
+	private TableColumn<?, ?> tcCidadeFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcEstado;
+	private TableColumn<?, ?> tcEnderecoFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcModelo;
+	private TableColumn<?, ?> tcTelefoneFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcCNH;
+	private Button btNewFilial;
+
+	@FXML
+	private Button btExcluirFilial;
+
+	@FXML
+	private Button btEditFilial;
+
+	@FXML
+	private TableColumn<?, ?> tcIdHistoricoAluguel;
+
+	@FXML
+	private TableColumn<?, ?> tcHistoricoLocatario;
+
+	@FXML
+	private TableColumn<?, ?> tcHistoricoCarroAlugado;
+
+	@FXML
+	private TableColumn<?, ?> tcHistoricoDataInicio;
+
+	@FXML
+	private TableColumn<?, ?> tcHistoricoDataFim;
+
+	@FXML
+	private TableColumn<?, ?> tcHistoricoSituacao;
+
+	@FXML
+	private TableColumn<?, ?> tcHistoricoValorTotal;
+
+	@FXML
+	void adicionarCliente(ActionEvent event) {
+
+	}
+
+	@FXML
+	void cadastrarVeiculos(ActionEvent event) {
+
+	}
 
 	@FXML
 	void criarNovoAluguel(ActionEvent event) {
@@ -165,12 +175,12 @@ public class ControllerMenu {
 	}
 
 	@FXML
-	void excluirAluguel(ActionEvent event) {
+	void editarCliente(ActionEvent event) {
 
 	}
 
 	@FXML
-	void cadastrarVeiculos(ActionEvent event) {
+	void editarFilial(ActionEvent event) {
 
 	}
 
@@ -180,17 +190,7 @@ public class ControllerMenu {
 	}
 
 	@FXML
-	void excluirVeiculo(ActionEvent event) {
-
-	}
-
-	@FXML
-	void adicionarCliente(ActionEvent event) {
-
-	}
-
-	@FXML
-	void editarCliente(ActionEvent event) {
+	void excluirAluguel(ActionEvent event) {
 
 	}
 
@@ -200,17 +200,17 @@ public class ControllerMenu {
 	}
 
 	@FXML
-	void novaFilial(ActionEvent event) {
-
-	}
-
-	@FXML
 	void excluirFilial(ActionEvent event) {
 
 	}
 
 	@FXML
-	void editarFilial(ActionEvent event) {
+	void excluirVeiculo(ActionEvent event) {
+
+	}
+
+	@FXML
+	void novaFilial(ActionEvent event) {
 
 	}
 
