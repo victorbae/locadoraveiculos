@@ -72,7 +72,7 @@ public class FilialBanco implements FilialDAO {
 				filial.setNomefilial(rs.getString("nomefilial"));
 				filial.setCidade(rs.getString("cidade"));
 				filial.setEndereco(rs.getString("endereco"));
-				filial.setTelefone(Long.valueOf(rs.getString("telefone")));
+				filial.setTelefone(rs.getString("telefone"));
 				filials.add(filial);
 			}
 		} catch (SQLException e) {
