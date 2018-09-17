@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import model.Filial;
 
 public class ControllerFiliais {
 
@@ -11,19 +12,19 @@ public class ControllerFiliais {
 	private Button btNewFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcIdFilial;
+	private TableColumn<Filial, Integer> tcIdFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcNomeFilial;
+	private TableColumn<Filial, String> tcNomeFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcCidadeFilial;
+	private TableColumn<Filial, String> tcCidadeFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcEnderecoFilial;
+	private TableColumn<Filial, String> tcEnderecoFilial;
 
 	@FXML
-	private TableColumn<?, ?> tcTelefoneFilial;
+	private TableColumn<Filial, String> tcTelefoneFilial;
 
 	@FXML
 	private Button btEditFilial;

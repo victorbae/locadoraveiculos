@@ -15,12 +15,14 @@ public class Pessoa implements Serializable {
 	private int idade;
 	private String telefone;
 	private String email;
+	private String endereco;
 
 	public Pessoa() {
 		super();
 	}
 
-	public Pessoa(String nome, String cpf, String rg, String cnh, int idade, String telefone, String email) {
+	public Pessoa(String nome, String cpf, String rg, String cnh, int idade, String telefone, String email,
+			String endereco) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -29,6 +31,7 @@ public class Pessoa implements Serializable {
 		this.idade = idade;
 		this.telefone = telefone;
 		this.email = email;
+		this.endereco = endereco;
 	}
 
 	public String getNome() {
@@ -85,6 +88,14 @@ public class Pessoa implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 }

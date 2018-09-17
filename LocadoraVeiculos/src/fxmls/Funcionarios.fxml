@@ -18,10 +18,11 @@
          <columns>
             <TableColumn fx:id="tcIdFuncionario" prefWidth="32.0" text="#" />
             <TableColumn fx:id="tcNomeFuncionario" prefWidth="156.0" text="Nome" />
-            <TableColumn fx:id="tcCpf" prefWidth="143.99998474121094" text="CPF" />
-            <TableColumn fx:id="tcTelefone" minWidth="0.0" prefWidth="147.20001220703125" text="Telefone" />
-            <TableColumn fx:id="tcEndereco" prefWidth="318.4000244140625" text="Endereco" />
-            <TableColumn fx:id="tcFilial" prefWidth="168.800048828125" text="Filial" />
+            <TableColumn fx:id="tcCargo" prefWidth="107.19999694824219" text="Cargo" />
+            <TableColumn fx:id="tcCpf" prefWidth="129.5999755859375" text="CPF" />
+            <TableColumn fx:id="tcTelefone" minWidth="0.0" prefWidth="151.199951171875" text="Telefone" />
+            <TableColumn fx:id="tcEndereco" minWidth="0.79998779296875" prefWidth="239.20001220703125" text="Endereco" />
+            <TableColumn fx:id="tcFilial" maxWidth="164.00006103515625" prefWidth="152.0001220703125" text="Filial" />
          </columns>
       </TableView>
    </children>

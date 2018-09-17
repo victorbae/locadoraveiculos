@@ -1,9 +1,13 @@
 package controllers;
 
+import java.util.Date;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import model.Funcionario;
+import model.Veiculo;
 
 public class ControllerVeiculos {
 
@@ -11,31 +15,31 @@ public class ControllerVeiculos {
 	private Button btCadastrarVeiculos;
 
 	@FXML
-	private TableColumn<?, ?> tcIdVeiculo;
+	private TableColumn<Veiculo, Integer> tcIdVeiculo;
 
 	@FXML
-	private TableColumn<?, ?> tcPlaca;
+	private TableColumn<Veiculo, String> tcPlaca;
 
 	@FXML
-	private TableColumn<?, ?> tcAnoFabricacao;
+	private TableColumn<Veiculo, Date> tcAnoFabricacao;
 
 	@FXML
-	private TableColumn<?, ?> tcCor;
+	private TableColumn<Veiculo, String> tcCor;
 
 	@FXML
-	private TableColumn<?, ?> tcModelo;
+	private TableColumn<Veiculo, String> tcModelo;
 
 	@FXML
-	private TableColumn<?, ?> tcFabricante;
+	private TableColumn<Veiculo, String> tcFabricante;
 
 	@FXML
-	private TableColumn<?, ?> tcEstado;
+	private TableColumn<Veiculo, String> tcEstado;
 
 	@FXML
-	private TableColumn<?, ?> tcPropretario;
+	private TableColumn<Veiculo, Funcionario> tcPropretario;
 
 	@FXML
-	private TableColumn<?, ?> tcStatus;
+	private TableColumn<Veiculo, String> tcStatus;
 
 	@FXML
 	private Button btEditVeiculo;

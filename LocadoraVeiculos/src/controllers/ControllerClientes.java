@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import model.Cliente;
 
 public class ControllerClientes {
 
@@ -11,31 +12,31 @@ public class ControllerClientes {
 	private Button btNewCliente;
 
 	@FXML
-	private TableColumn<?, ?> tcIdCliente;
+	private TableColumn<Cliente, Integer> tcIdCliente;
 
 	@FXML
-	private TableColumn<?, ?> tcNomeCliente;
+	private TableColumn<Cliente, String> tcNomeCliente;
 
 	@FXML
-	private TableColumn<?, ?> tcCPF;
+	private TableColumn<Cliente, String> tcCPF;
 
 	@FXML
-	private TableColumn<?, ?> tcCNH;
+	private TableColumn<Cliente, String> tcCNH;
 
 	@FXML
-	private TableColumn<?, ?> tcRG;
+	private TableColumn<Cliente, String> tcRG;
 
 	@FXML
-	private TableColumn<?, ?> tcIdade;
+	private TableColumn<Cliente, Integer> tcIdade;
 
 	@FXML
-	private TableColumn<?, ?> tcTelefoneCliente;
+	private TableColumn<Cliente, String> tcTelefoneCliente;
 
 	@FXML
-	private TableColumn<?, ?> tcEmail;
+	private TableColumn<Cliente, String> tcEmail;
 
 	@FXML
-	private TableColumn<?, ?> tcLocando;
+	private TableColumn<Cliente, Boolean> tcLocando;
 
 	@FXML
 	private Button btEditCliente;

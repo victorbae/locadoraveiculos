@@ -12,14 +12,14 @@ public class Filial implements Serializable {
 	private String nomefilial;
 	private String cidade;
 	private String endereco;
-	private Long telefone;
+	private String telefone;
 
 	public Filial() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Filial(Integer codigoFilial, String nomefilial, String cidade, String endereco, Long telefone) {
+	public Filial(Integer codigoFilial, String nomefilial, String cidade, String endereco, String telefone) {
 		super();
 		this.codigoFilial = codigoFilial;
 		this.nomefilial = nomefilial;
@@ -60,11 +60,11 @@ public class Filial implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public Long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import model.Filial;
+import model.Funcionario;
 
 public class ControllerFuncionarios {
 
@@ -15,22 +17,25 @@ public class ControllerFuncionarios {
 	private TableView<?> tbl;
 
 	@FXML
-	private TableColumn<?, ?> tcIdFuncionario;
+	private TableColumn<Funcionario, Integer> tcIdFuncionario;
 
 	@FXML
-	private TableColumn<?, ?> tcNomeFuncionario;
+	private TableColumn<Funcionario, String> tcNomeFuncionario;
 
 	@FXML
-	private TableColumn<?, ?> tcCpf;
+	private TableColumn<Funcionario, String> tcCargo;
 
 	@FXML
-	private TableColumn<?, ?> tcTelefone;
+	private TableColumn<Funcionario, String> tcCpf;
 
 	@FXML
-	private TableColumn<?, ?> tcEndereco;
+	private TableColumn<Funcionario, String> tcTelefone;
 
 	@FXML
-	private TableColumn<?, ?> tcFilial;
+	private TableColumn<Funcionario, String> tcEndereco;
+
+	@FXML
+	private TableColumn<Funcionario, Filial> tcFilial;
 
 	@FXML
 	private Button btEditFuncionario;
