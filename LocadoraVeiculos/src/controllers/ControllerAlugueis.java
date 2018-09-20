@@ -1,14 +1,18 @@
 package controllers;
 
+import java.io.IOException;
 import java.util.Date;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.layout.AnchorPane;
 import model.Aluguel;
 import model.Cliente;
 import model.Veiculo;
+import principal.Main;
 
 public class ControllerAlugueis {
 
@@ -44,17 +48,28 @@ public class ControllerAlugueis {
 
 	@FXML
 	void criarNovoAluguel(ActionEvent event) {
-
+		telaNewAluguel();
 	}
 
 	@FXML
 	void editarAluguel(ActionEvent event) {
-
+		telaNewAluguel();
 	}
 
 	@FXML
 	void excluirAluguel(ActionEvent event) {
+		telaNewAluguel();
+	}
 
+	public void telaNewAluguel() {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/fxmls/NovoAluguel.fxml"));
+		try {
+			AnchorPane agenciaView = (AnchorPane) loader.load();
+			Main.root.setCenter(agenciaView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 }
