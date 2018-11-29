@@ -2,6 +2,8 @@ package controllers;
 
 import java.io.IOException;
 
+import banco.ClienteBanco;
+import dao.ClienteDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Cliente;
 import principal.Main;
 
 public class ControllerNewCliente {
@@ -43,6 +46,9 @@ public class ControllerNewCliente {
 	@FXML
 	private Button btnSalvar;
 
+	private ClienteDAO clienteDao = new ClienteBanco();
+	private Cliente cliente;
+
 	@FXML
 	void cancelar(ActionEvent event) {
 		voltarClientes();
@@ -50,6 +56,8 @@ public class ControllerNewCliente {
 
 	@FXML
 	void salvar(ActionEvent event) {
+		populaCliente();
+		clienteDao.inserir(cliente);
 		voltarClientes();
 	}
 
@@ -62,6 +70,19 @@ public class ControllerNewCliente {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+	}
+
+	public void populaCliente() {
+		cliente = new Cliente();
+
+		cliente.setCnh(tfCNH.getText());
+		cliente.setCpf(tfCPF.getText());
+		cliente.setEmail(tfEmail.getText());
+		cliente.setEndereco(tfEndereco.getText());
+		cliente.setDatanascimento(dtDataNascimento.getValue());
+		cliente.setNome(tfNome.getText());
+		cliente.setTelefone(tfTelefone.getText());
+		cliente.setRg(tfRG.getText());
 	}
 
 }

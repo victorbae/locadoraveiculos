@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,16 +16,15 @@ public class ClienteBanco implements ClienteDAO {
 	@Override
 	public void inserir(Cliente dado) {
 		try {
-			String sql = "insert into clientes (codigocliente,nome,cpf,rg,cnh,idade,telefone,email) values(?,?,?,?,?,?,?,?)";
+			String sql = "insert into clientes (codigocliente,nome,cpf,rg,cnh,data_nascimento,telefone,email) values(null,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
-			stmt.setInt(1, dado.getCodigoCliente());
-			stmt.setString(2, dado.getNome());
-			stmt.setString(3, dado.getCpf());
-			stmt.setString(4, dado.getRg());
-			stmt.setString(5, dado.getCnh());
-			stmt.setInt(6, dado.getIdade());
-			stmt.setString(7, dado.getTelefone());
-			stmt.setString(8, dado.getEmail());
+			stmt.setString(1, dado.getNome());
+			stmt.setString(2, dado.getCpf());
+			stmt.setString(3, dado.getRg());
+			stmt.setString(4, dado.getCnh());
+			stmt.setString(5, dado.getDatanascimento().toString());
+			stmt.setString(6, dado.getTelefone());
+			stmt.setString(7, dado.getEmail());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -35,14 +35,14 @@ public class ClienteBanco implements ClienteDAO {
 	@Override
 	public void alterar(Cliente dado) {
 		try {
-			String sql = "update clientes set nome = ?,cpf = ?,rg = ?,cnh = ?,idade = ?,telefone = ?,email = ? where codigocliente = ?";
+			String sql = "update clientes set nome = ?,cpf = ?,rg = ?,cnh = ?,data_nascimento = ?,telefone = ?,email = ? where codigocliente = ?";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
 
 			stmt.setString(1, dado.getNome());
 			stmt.setString(2, dado.getCpf());
 			stmt.setString(3, dado.getRg());
 			stmt.setString(4, dado.getCnh());
-			stmt.setInt(5, dado.getIdade());
+			stmt.setString(5, dado.getDatanascimento().toString());
 			stmt.setString(6, dado.getTelefone());
 			stmt.setString(7, dado.getEmail());
 			stmt.setInt(8, dado.getCodigoCliente());
@@ -79,7 +79,7 @@ public class ClienteBanco implements ClienteDAO {
 				cliente.setCpf(rs.getString("cpf"));
 				cliente.setRg(rs.getString("rg"));
 				cliente.setCnh(rs.getString("cnh"));
-				cliente.setIdade(rs.getInt("idade"));
+				cliente.setDatanascimento(LocalDate.parse(rs.getString("data_nascimento")));
 				cliente.setTelefone(rs.getString("telefone"));
 				cliente.setEmail(rs.getString("email"));
 				clientes.add(cliente);

@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Pessoa implements Serializable {
 
@@ -12,7 +13,7 @@ public class Pessoa implements Serializable {
 	private String cpf;
 	private String rg;
 	private String cnh;
-	private int idade;
+	private LocalDate datanascimento;
 	private String telefone;
 	private String email;
 	private String endereco;
@@ -21,17 +22,25 @@ public class Pessoa implements Serializable {
 		super();
 	}
 
-	public Pessoa(String nome, String cpf, String rg, String cnh, int idade, String telefone, String email,
-			String endereco) {
+	public Pessoa(String nome, String cpf, String rg, String cnh, LocalDate datanascimento, String telefone,
+			String email, String endereco) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
 		this.cnh = cnh;
-		this.idade = idade;
+		this.datanascimento = datanascimento;
 		this.telefone = telefone;
 		this.email = email;
 		this.endereco = endereco;
+	}
+
+	public LocalDate getDatanascimento() {
+		return datanascimento;
+	}
+
+	public void setDatanascimento(LocalDate datanascimento) {
+		this.datanascimento = datanascimento;
 	}
 
 	public String getNome() {
@@ -64,14 +73,6 @@ public class Pessoa implements Serializable {
 
 	public void setCnh(String cnh) {
 		this.cnh = cnh;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
 	}
 
 	public String getTelefone() {

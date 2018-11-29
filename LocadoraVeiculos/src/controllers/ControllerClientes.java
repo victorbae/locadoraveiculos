@@ -2,11 +2,16 @@ package controllers;
 
 import java.io.IOException;
 
+import banco.ClienteBanco;
+import dao.ClienteDAO;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
 import principal.Main;
@@ -15,6 +20,9 @@ public class ControllerClientes {
 
 	@FXML
 	private Button btNewCliente;
+
+	@FXML
+	private TableView<Cliente> tcCliente;
 
 	@FXML
 	private TableColumn<Cliente, Integer> tcIdCliente;
@@ -49,9 +57,24 @@ public class ControllerClientes {
 	@FXML
 	private Button btExcluirCliente;
 
+	private ClienteDAO clienteDao = new ClienteBanco();
+
+	@FXML
+	private void initialize() {
+		tcNomeCliente.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		tcCPF.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+		tcCNH.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		tcRG.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
+		tcIdade.setCellValueFactory(new PropertyValueFactory<>("filial"));
+		tcTelefoneCliente.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+		tcEmail.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+		tcLocando.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+		tcCliente.setItems(FXCollections.observableArrayList(clienteDao.listar()));
+	}
+
 	@FXML
 	void adicionarCliente(ActionEvent event) {
-
+		telaNewCliente();
 	}
 
 	@FXML
@@ -63,7 +86,7 @@ public class ControllerClientes {
 	void excluirCliente(ActionEvent event) {
 
 	}
-	
+
 	public void telaNewCliente() {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/fxmls/NovoCliente.fxml"));

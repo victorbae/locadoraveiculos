@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class FuncionarioBanco implements FuncionarioDAO {
 			stmt.setString(4, dado.getCpf());
 			stmt.setString(5, dado.getRg());
 			stmt.setString(6, dado.getCnh());
-			stmt.setInt(7, dado.getIdade());
+			stmt.setString(7, dado.getDatanascimento().toString());
 			stmt.setString(8, dado.getTelefone());
 			stmt.setString(9, dado.getEmail());
 			stmt.setInt(10, dado.getFilial().getCodigoFilial());
@@ -46,7 +47,7 @@ public class FuncionarioBanco implements FuncionarioDAO {
 			stmt.setString(3, dado.getCpf());
 			stmt.setString(4, dado.getRg());
 			stmt.setString(5, dado.getCnh());
-			stmt.setInt(6, dado.getIdade());
+			stmt.setString(6, dado.getDatanascimento().toString());
 			stmt.setString(7, dado.getTelefone());
 			stmt.setString(8, dado.getEmail());
 			stmt.setInt(9, dado.getFilial().getCodigoFilial());
@@ -85,7 +86,7 @@ public class FuncionarioBanco implements FuncionarioDAO {
 				funcionario.setCpf(rs.getString("cpf"));
 				funcionario.setRg(rs.getString("rg"));
 				funcionario.setCnh(rs.getString("cnh"));
-				funcionario.setIdade(rs.getInt("idade"));
+				funcionario.setDatanascimento(LocalDate.parse(rs.getString("data_nascimento")));
 				funcionario.setTelefone(rs.getString("telefone"));
 				funcionario.setEmail(rs.getString("email"));
 				funcionario.setFilial(EstaticosParaFuncionario.achaFilial(rs.getInt("filial")));
