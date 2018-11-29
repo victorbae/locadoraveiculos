@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controllers.ControllerNewAluguel">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="125.0" layoutY="133.0" text="Cliente:" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="593.0" layoutY="133.0" text="Veiculo:" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="246.0" text="Data Inicio:" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="581.0" layoutY="246.0" text="Data Fim:" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="116.0" layoutY="357.0" text="Situaçao:" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="570.0" layoutY="357.0" text="Valor Total:" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dtDataInicio" layoutX="225.0" layoutY="239.0" prefHeight="30.0" prefWidth="200.0" />
+            <DatePicker fx:id="dtDataFim" layoutX="684.0" layoutY="239.0" prefHeight="30.0" prefWidth="200.0" />
+            <ComboBox fx:id="cbxVeiculo" layoutX="684.0" layoutY="126.0" prefHeight="30.0" prefWidth="200.0" />
+            <ComboBox fx:id="cbxSituacao" layoutX="225.0" layoutY="350.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfValorTotal" layoutX="684.0" layoutY="350.0" prefHeight="30.0" prefWidth="200.0" />
+            <ComboBox fx:id="cbxCliente" layoutX="225.0" layoutY="126.0" prefHeight="30.0" prefWidth="200.0" />
+            <Button fx:id="btnCancelar" layoutX="684.0" layoutY="514.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+            <Button fx:id="btnSalvar" layoutX="836.0" layoutY="514.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

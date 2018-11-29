@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerClientes">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Button fx:id="btEditCliente" layoutX="774.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar Cliente" />
+         </children></Pane>
+      <Button fx:id="btNewCliente" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#adicionarCliente" text="Cadastrar Cliente" />
+      <TableView layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
+         <columns>
+            <TableColumn fx:id="tcIdCliente" prefWidth="32.0" text="#" />
+            <TableColumn fx:id="tcNomeCliente" prefWidth="145.00003051757812" text="Nome" />
+            <TableColumn fx:id="tcCPF" minWidth="0.0" prefWidth="128.0" text="CPF" />
+            <TableColumn fx:id="tcCNH" prefWidth="136.0" text="CNH" />
+            <TableColumn fx:id="tcRG" prefWidth="109.0" text="RG" />
+            <TableColumn fx:id="tcIdade" prefWidth="72.0" text="Idade" />
+            <TableColumn fx:id="tcTelefoneCliente" prefWidth="106.0" text="Telefone" />
+            <TableColumn fx:id="tcEmail" prefWidth="132.0" text="E-mail" />
+            <TableColumn fx:id="tcLocando" prefWidth="111.0" text="Locando?" />
+         </columns>
+      </TableView>
+      <Button fx:id="btExcluirCliente" layoutX="883.0" layoutY="31.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir Cliente" />
+   </children>
+</AnchorPane>

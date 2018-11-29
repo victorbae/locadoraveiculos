@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerLogin">
+   <children>
+      <Pane prefHeight="650.0" prefWidth="1000.0" styleClass="backgroundPrincipal" stylesheets="@Style.css">
+         <children>
+            <Pane layoutX="283.0" layoutY="189.0" prefHeight="272.0" prefWidth="435.0" style="-fx-border-color: black; -fx-background-color: #CDB79E; -fx-opacity: 0.95;">
+               <children>
+                  <Label layoutX="120.0" layoutY="14.0" text="Acesso ao Sistema">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="70.0" text="Login  ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="121.0" text="Senha  ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tdlogin" layoutX="112.0" layoutY="65.0" prefHeight="39.0" prefWidth="281.0" />
+                  <TextField fx:id="tfsenha" layoutX="112.0" layoutY="126.0" prefHeight="39.0" prefWidth="281.0" />
+                  <Hyperlink fx:id="hplesquecisenha" layoutX="25.0" layoutY="214.0" text="Esqueci minha senha" />
+                  <Button fx:id="btacessar" layoutX="289.0" layoutY="191.0" mnemonicParsing="false" onAction="#acessar" prefHeight="46.0" prefWidth="104.0" text="Acessar">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>
