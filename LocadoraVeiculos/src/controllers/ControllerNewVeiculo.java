@@ -1,7 +1,10 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.Date;
 
+import banco.VeiculoBanco;
+import dao.VeiculoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +15,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.Funcionario;
+import model.Veiculo;
 import principal.Main;
 
 public class ControllerNewVeiculo {
@@ -46,6 +50,10 @@ public class ControllerNewVeiculo {
 	@FXML
 	private Button btnSalvar;
 
+	VeiculoDAO veiculodao = new VeiculoBanco();
+
+	Veiculo veiculo;
+
 	@FXML
 	void cancelar(ActionEvent event) {
 		voltarVeiculos();
@@ -53,6 +61,8 @@ public class ControllerNewVeiculo {
 
 	@FXML
 	void salvar(ActionEvent event) {
+		preencheveiculo();
+		veiculodao.inserir(veiculo);
 		voltarVeiculos();
 	}
 
@@ -67,4 +77,15 @@ public class ControllerNewVeiculo {
 		}
 	}
 
+	void preencheveiculo() {
+		veiculo = new Veiculo();
+		veiculo.setPlaca(tfPlaca.getText());
+		veiculo.setAnofabricacao(Date.valueOf(String.valueOf(dtAnoFabricacao)));
+		veiculo.setFabricante(tfFabricante.getText());
+		veiculo.setModelo(tfModelo.getText());
+		veiculo.setCor(cpCor.getId());
+		veiculo.setEstado(tfEstado.getText());
+		veiculo.setProprietario(cbxFuncPropietario.getValue());
+		veiculo.setStatus(tfStatus.getText());
+	}
 }
