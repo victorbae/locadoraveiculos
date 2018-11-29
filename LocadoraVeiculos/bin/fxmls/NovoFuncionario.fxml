@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controllers.ControllerNewFuncionario">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="87.0" layoutY="122.0" text="Nome:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="93.0" layoutY="218.0" text="CPF:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="95.0" layoutY="312.0" text="RG:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="397.0" text="CNH:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="543.0" layoutY="401.0" text="Endereço:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="498.0" layoutY="114.0" text="Data Nascimento:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="218.0" text="Telefone:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="559.0" layoutY="312.0" text="E-mail:">
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dtDataNascimento" layoutX="651.0" layoutY="107.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfNome" layoutX="191.0" layoutY="115.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfCPF" layoutX="191.0" layoutY="211.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfRG" layoutX="191.0" layoutY="305.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfCNH" layoutX="187.0" layoutY="390.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfTelefone" layoutX="651.0" layoutY="211.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfEmail" layoutX="651.0" layoutY="305.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="tfEndereco" layoutX="651.0" layoutY="394.0" prefHeight="30.0" prefWidth="200.0" />
+            <Button fx:id="btnCancelar" layoutX="651.0" layoutY="500.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+            <Button fx:id="btnSalvar" layoutX="781.0" layoutY="500.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
+
+

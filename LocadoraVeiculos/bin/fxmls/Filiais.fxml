@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controllers.ControllerFiliais">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Button fx:id="btExcluirFilial" layoutX="904.0" layoutY="31.0" mnemonicParsing="false" onAction="#excluirFilial" text="Excluir Filial" />
+            <Button fx:id="btEditFilial" layoutX="784.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarFilial" text="Editar Filial" />
+         </children>
+      </Pane>
+      <Button fx:id="btNewFilial" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#novaFilial" text="Adicionar Nova Filial" />
+      <TableView layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
+         <columns>
+            <TableColumn fx:id="tcIdFilial" prefWidth="32.0" text="#" />
+            <TableColumn fx:id="tcNomeFilial" prefWidth="171.0" text="Nome Filial" />
+            <TableColumn fx:id="tcCidadeFilial" prefWidth="191.2000274658203" text="Cidade" />
+            <TableColumn fx:id="tcEnderecoFilial" prefWidth="357.5999755859375" text="Endereço" />
+            <TableColumn fx:id="tcTelefoneFilial" prefWidth="215.199951171875" text="Telefone" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

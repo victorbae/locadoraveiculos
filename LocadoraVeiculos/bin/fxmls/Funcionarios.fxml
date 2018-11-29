@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerFuncionarios">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Button fx:id="btExcluirFuncionario" layoutX="864.0" layoutY="31.0" mnemonicParsing="false" onAction="#excluirFuncionario" prefHeight="25.0" prefWidth="118.0" text="Excluir Funcionario" />
+            <Button fx:id="btEditFuncionario" layoutX="726.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarFuncionario" text="Editar Funcionario" />
+         </children></Pane>
+      <Button fx:id="btAdicionarFuncionario" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#adicionarFuncionario" text="Cadastrar Funcionario" />
+      <TableView fx:id="tbl" layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
+         <columns>
+            <TableColumn fx:id="tcIdFuncionario" prefWidth="32.0" text="#" />
+            <TableColumn fx:id="tcNomeFuncionario" prefWidth="156.0" text="Nome" />
+            <TableColumn fx:id="tcCargo" prefWidth="107.19999694824219" text="Cargo" />
+            <TableColumn fx:id="tcCpf" prefWidth="129.5999755859375" text="CPF" />
+            <TableColumn fx:id="tcTelefone" minWidth="0.0" prefWidth="151.199951171875" text="Telefone" />
+            <TableColumn fx:id="tcEndereco" minWidth="0.79998779296875" prefWidth="239.20001220703125" text="Endereco" />
+            <TableColumn fx:id="tcFilial" maxWidth="164.00006103515625" prefWidth="152.0001220703125" text="Filial" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
