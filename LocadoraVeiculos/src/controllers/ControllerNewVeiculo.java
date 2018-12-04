@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.time.LocalDate;
 
 import banco.VeiculoBanco;
 import dao.VeiculoDAO;
@@ -50,9 +51,14 @@ public class ControllerNewVeiculo {
 	@FXML
 	private Button btnSalvar;
 
-	VeiculoDAO veiculodao = new VeiculoBanco();
+	private VeiculoDAO veiculodao = new VeiculoBanco();
 
-	Veiculo veiculo;
+	private Veiculo veiculo;
+
+	@FXML
+	public void initialize() {
+		populaCombos();
+	}
 
 	@FXML
 	void cancelar(ActionEvent event) {
@@ -80,12 +86,27 @@ public class ControllerNewVeiculo {
 	void preencheveiculo() {
 		veiculo = new Veiculo();
 		veiculo.setPlaca(tfPlaca.getText());
-		veiculo.setAnofabricacao(Date.valueOf(String.valueOf(dtAnoFabricacao)));
+		veiculo.setAnofabricacao(Date.valueOf(dtAnoFabricacao.getValue()));
 		veiculo.setFabricante(tfFabricante.getText());
 		veiculo.setModelo(tfModelo.getText());
 		veiculo.setCor(cpCor.getId());
 		veiculo.setEstado(tfEstado.getText());
 		veiculo.setProprietario(cbxFuncPropietario.getValue());
 		veiculo.setStatus(tfStatus.getText());
+	}
+
+	private void populaCombos() {
+		Funcionario func = new Funcionario("Vitor", "321.546.879-05", "45897321", "5456132", LocalDate.now(),
+				"3433-0110", "sem@email.email", "Rua das Brigas de Soco");
+		func.setCodigoFuncionario(9);
+		Funcionario func2 = new Funcionario("Joao", "321.546.969-05", "45897321", "5456132", LocalDate.now(),
+				"49 3433-0110", "novo@email.email", "Rua das Brigas de Facas");
+		func.setCodigoFuncionario(6);
+		Funcionario func3 = new Funcionario("Noé", "321.546.865-65", "45897321", "5456132", LocalDate.now(),
+				"11 3433-0110", "arca@noe.chuva", "Rua das Aguas Fundas");
+		func.setCodigoFuncionario(3);
+		cbxFuncPropietario.getItems().add(func);
+		cbxFuncPropietario.getItems().add(func2);
+		cbxFuncPropietario.getItems().add(func3);
 	}
 }

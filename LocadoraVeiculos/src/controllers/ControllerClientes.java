@@ -59,17 +59,20 @@ public class ControllerClientes {
 
 	private ClienteDAO clienteDao = new ClienteBanco();
 
+	private Cliente cliente;
+
 	@FXML
 	private void initialize() {
 		tcNomeCliente.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		tcCPF.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-		tcCNH.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-		tcRG.setCellValueFactory(new PropertyValueFactory<>("dataNascimento"));
-		tcIdade.setCellValueFactory(new PropertyValueFactory<>("filial"));
-		tcTelefoneCliente.setCellValueFactory(new PropertyValueFactory<>("endereco"));
-		tcEmail.setCellValueFactory(new PropertyValueFactory<>("endereco"));
-		tcLocando.setCellValueFactory(new PropertyValueFactory<>("endereco"));
+		tcCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		tcCNH.setCellValueFactory(new PropertyValueFactory<>("cnh"));
+		tcRG.setCellValueFactory(new PropertyValueFactory<>("rg"));
+		tcIdade.setCellValueFactory(new PropertyValueFactory<>("datanascimento"));
+		tcTelefoneCliente.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+		tcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+//		tcLocando.setCellValueFactory(new PropertyValueFactory<>(""));
 		tcCliente.setItems(FXCollections.observableArrayList(clienteDao.listar()));
+		tcCliente.refresh();
 	}
 
 	@FXML
@@ -84,7 +87,12 @@ public class ControllerClientes {
 
 	@FXML
 	void excluirCliente(ActionEvent event) {
-
+		if (tcCliente.getSelectionModel().getSelectedItem() != null) {
+			cliente = tcCliente.getSelectionModel().getSelectedItem();
+			clienteDao.excluir(cliente);
+		}
+		tcCliente.setItems(FXCollections.observableArrayList(clienteDao.listar()));
+		tcCliente.refresh();
 	}
 
 	public void telaNewCliente() {

@@ -12,10 +12,10 @@
          <children>
             <Button fx:id="btExcluirAluguel" layoutX="886.0" layoutY="31.0" mnemonicParsing="false" onAction="#excluirAluguel" text="Excluir Aluguel" />
             <Button fx:id="btEditAluguel" layoutX="758.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarAluguel" text="Editar Aluguel " />
-            <Button layoutX="128.0" layoutY="31.0" mnemonicParsing="false" text="Finalizar Aluguel" />
+            <Button fx:id="finalAluguel" layoutX="128.0" layoutY="31.0" mnemonicParsing="false" onAction="#finalizarAluguel" text="Finalizar Aluguel" />
          </children></Pane>
       <Button fx:id="btNewAluguel" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#criarNovoAluguel" text="Novo Aluguel" />
-      <TableView layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
+      <TableView fx:id="tcAluguel" layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
          <columns>
             <TableColumn fx:id="tcIdAluguel" prefWidth="32.0" text="#" />
             <TableColumn fx:id="tcLocatario" prefWidth="104.0" text="Locatario" />

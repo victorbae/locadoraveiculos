@@ -1,7 +1,14 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.Date;
 
+import banco.AluguelBanco;
+import banco.ClienteBanco;
+import banco.VeiculoBanco;
+import dao.AluguelDAO;
+import dao.ClienteDAO;
+import dao.VeiculoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Aluguel;
 import model.Cliente;
 import model.Veiculo;
 import principal.Main;
@@ -27,7 +35,7 @@ public class ControllerNewAluguel {
 
 	// Criar Classe para deixar definido a situaçao
 	@FXML
-	private ComboBox<?> cbxSituacao;
+	private ComboBox<String> cbxSituacao;
 
 	@FXML
 	private TextField tfValorTotal;
@@ -41,6 +49,16 @@ public class ControllerNewAluguel {
 	@FXML
 	private Button btnSalvar;
 
+	private Aluguel aluguel;
+	private AluguelDAO aluguelDAO = new AluguelBanco();
+	private VeiculoDAO veiculodao = new VeiculoBanco();
+	private ClienteDAO clienteDao = new ClienteBanco();
+
+	@FXML
+	void initialize() {
+		populaCombos();
+	}
+
 	@FXML
 	void cancelar(ActionEvent event) {
 		voltarTela();
@@ -48,6 +66,8 @@ public class ControllerNewAluguel {
 
 	@FXML
 	void salvar(ActionEvent event) {
+		preecheAluguel();
+		aluguelDAO.inserir(aluguel);
 		voltarTela();
 	}
 
@@ -60,6 +80,29 @@ public class ControllerNewAluguel {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+	}
+
+	public void preecheAluguel() {
+		aluguel = new Aluguel();
+
+		aluguel.setCarroalugado(cbxVeiculo.getValue());
+		aluguel.setCodigoaluguel(cbxVeiculo.getValue().getCodigoveiculo());
+		aluguel.setDatafim(Date.valueOf(dtDataFim.getValue()));
+		aluguel.setDatainicio(Date.valueOf(dtDataInicio.getValue()));
+		aluguel.setLocatario(cbxCliente.getValue());
+		aluguel.setSituacao(cbxSituacao.getValue().toString());
+		aluguel.setValortotal(Double.valueOf(tfValorTotal.getText()));
+	}
+
+	private void populaCombos() {
+		for (Veiculo veiculo : veiculodao.listar()) {
+			cbxVeiculo.getItems().add(veiculo);
+		}
+		for (Cliente cliente : clienteDao.listar()) {
+			cbxCliente.getItems().add(cliente);
+		}
+
+		cbxSituacao.getItems().add("EM ANDAMENTO");
 	}
 
 }

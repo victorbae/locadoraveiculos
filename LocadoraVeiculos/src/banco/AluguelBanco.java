@@ -17,15 +17,14 @@ public class AluguelBanco implements AluguelDAO {
 	@Override
 	public void inserir(Aluguel dado) {
 		try {
-			String sql = "insert into alugueis (codigoaluguel,locatario,carroalugado,datainicio,datafim,situacao,valortotal) values(?,?,?,?,?,?,?)";
+			String sql = "insert into alugueis (codigoaluguel,locatario,carroalugado,datainicio,datafim,situacao,valortotal) values(null,?,?,?,?,?,?)";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
-			stmt.setInt(1, dado.getCodigoaluguel());
-			stmt.setString(2, dado.getLocatario().getNome());
-			stmt.setString(3, dado.getCarroalugado().getModelo());
-			stmt.setDate(4, (Date) dado.getDatainicio());
-			stmt.setDate(5, (Date) dado.getDatafim());
-			stmt.setString(6, dado.getSituacao());
-			stmt.setDouble(7, dado.getValortotal());
+			stmt.setString(1, dado.getLocatario().getNome());
+			stmt.setString(2, dado.getCarroalugado().getModelo());
+			stmt.setDate(3, (Date) dado.getDatainicio());
+			stmt.setDate(4, (Date) dado.getDatafim());
+			stmt.setString(5, dado.getSituacao());
+			stmt.setDouble(6, dado.getValortotal());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -56,7 +55,7 @@ public class AluguelBanco implements AluguelDAO {
 	@Override
 	public void excluir(Aluguel dado) {
 		try {
-			String sql = "delete from alugueis where id = ?";
+			String sql = "delete from alugueis where codigoaluguel = ?";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigoaluguel());
 			stmt.executeUpdate();
@@ -74,8 +73,8 @@ public class AluguelBanco implements AluguelDAO {
 			while (rs.next()) {
 				Aluguel aluguel = new Aluguel();
 				aluguel.setCodigoaluguel(rs.getInt("codigoaluguel"));
-				aluguel.setLocatario(EstaticosParaAluguel.achaCliente(rs.getInt("locatario")));
-				aluguel.setCarroalugado(EstaticosParaAluguel.achaVeiculo(rs.getInt("carroalugado")));
+				aluguel.setLocatario(EstaticosParaAluguel.achaCliente(rs.getString("locatario")));
+				aluguel.setCarroalugado(EstaticosParaAluguel.achaVeiculo(rs.getString("carroalugado")));
 				aluguel.setDatainicio(rs.getDate("datainicio"));
 				aluguel.setDatafim(rs.getDate("datafim"));
 				aluguel.setSituacao(rs.getString("situacao"));

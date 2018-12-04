@@ -11,11 +11,11 @@ public class EstaticosParaAluguel {
 
 	public static Cliente clienteEstatica;
 
-	public static Cliente achaCliente(Integer codigoCliente) {
+	public static Cliente achaCliente(String nomeCliente) {
 		Cliente cliente = null;
 		ClienteDAO clientedao = new ClienteBanco();
 		for (Cliente f : clientedao.listar()) {
-			if (f.getCodigoCliente().equals(codigoCliente)) {
+			if (f.getNome().equals(nomeCliente)) {
 				cliente = f;
 			}
 		}
@@ -24,11 +24,11 @@ public class EstaticosParaAluguel {
 
 	public static Veiculo veiculoEstatica;
 
-	public static Veiculo achaVeiculo(Integer codigoVeiculo) {
+	public static Veiculo achaVeiculo(String modeloVeiculo) {
 		Veiculo veiculo = null;
 		VeiculoDAO veiculodao = new VeiculoBanco();
 		for (Veiculo f : veiculodao.listar()) {
-			if (f.getCodigoveiculo().equals(codigoVeiculo)) {
+			if (f.getModelo().equals(modeloVeiculo)) {
 				veiculo = f;
 			}
 		}

@@ -55,4 +55,9 @@ public class Funcionario extends Pessoa implements Serializable {
 		this.filial = filial;
 	}
 
+	@Override
+	public String toString() {
+		return getNome();
+	}
+
 }

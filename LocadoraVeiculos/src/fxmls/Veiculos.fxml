@@ -10,7 +10,7 @@
    <children>
       <Pane prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <TableView layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
+            <TableView fx:id="tcVeiculos" layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
                <columns>
                   <TableColumn fx:id="tcIdVeiculo" prefWidth="32.0" text="#" />
                   <TableColumn fx:id="tcPlaca" prefWidth="102.0" text="Placa" />

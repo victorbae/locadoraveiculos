@@ -13,7 +13,7 @@
             <Button fx:id="btEditCliente" layoutX="774.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar Cliente" />
          </children></Pane>
       <Button fx:id="btNewCliente" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#adicionarCliente" text="Cadastrar Cliente" />
-      <TableView layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
+      <TableView fx:id="tcCliente" layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
          <columns>
             <TableColumn fx:id="tcIdCliente" prefWidth="32.0" text="#" />
             <TableColumn fx:id="tcNomeCliente" prefWidth="145.00003051757812" text="Nome" />

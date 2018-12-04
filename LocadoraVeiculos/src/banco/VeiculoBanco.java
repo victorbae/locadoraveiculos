@@ -17,17 +17,17 @@ public class VeiculoBanco implements VeiculoDAO {
 	@Override
 	public void inserir(Veiculo dado) {
 		try {
-			String sql = "insert into veiculos (codigoveiculo,placa,anofabricacao,cor,modelo,fabricante,estado,proprietario,status) values(?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into veiculos (codigoveiculo,placa,anofabricacao,cor,modelo,fabricante,estado,proprietario,status) values(null,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
-			stmt.setInt(1, dado.getCodigoveiculo());
-			stmt.setString(2, dado.getPlaca());
-			stmt.setDate(3, (Date) dado.getAnofabricacao());
-			stmt.setString(4, dado.getCor());
-			stmt.setString(5, dado.getModelo());
-			stmt.setString(6, dado.getFabricante());
-			stmt.setString(7, dado.getEstado());
-			stmt.setInt(8, dado.getProprietario().getCodigoFuncionario());
-			stmt.setString(9, dado.getStatus());
+//			stmt.setInt(1, dado.getCodigoveiculo());
+			stmt.setString(1, dado.getPlaca());
+			stmt.setDate(2, (Date) dado.getAnofabricacao());
+			stmt.setString(3, dado.getCor());
+			stmt.setString(4, dado.getModelo());
+			stmt.setString(5, dado.getFabricante());
+			stmt.setString(6, dado.getEstado());
+			stmt.setInt(7, dado.getProprietario().getCodigoFuncionario());
+			stmt.setString(8, dado.getStatus());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class VeiculoBanco implements VeiculoDAO {
 	@Override
 	public void excluir(Veiculo dado) {
 		try {
-			String sql = "delete from veiculos where id = ?";
+			String sql = "delete from veiculos where codigoveiculo = ?";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigoveiculo());
 			stmt.executeUpdate();
@@ -81,7 +81,7 @@ public class VeiculoBanco implements VeiculoDAO {
 				Veiculo veiculo = new Veiculo();
 				veiculo.setCodigoveiculo(rs.getInt("codigoveiculo"));
 				veiculo.setPlaca(rs.getString("placa"));
-				veiculo.setAnofabricacao(rs.getDate("anofabricacao "));
+				veiculo.setAnofabricacao(rs.getDate("anofabricacao"));
 				veiculo.setCor(rs.getString("cor"));
 				veiculo.setModelo(rs.getString("modelo"));
 				veiculo.setFabricante(rs.getString("fabricante"));

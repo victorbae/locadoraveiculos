@@ -35,4 +35,9 @@ public class Cliente extends Pessoa implements Serializable {
 		this.codigoCliente = codigoCliente;
 	}
 
+	@Override
+	public String toString() {
+		return getNome();
+	}
+
 }

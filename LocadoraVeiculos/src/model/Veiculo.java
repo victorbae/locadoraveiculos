@@ -110,4 +110,9 @@ public class Veiculo implements Serializable {
 		this.codigoveiculo = codigoveiculo;
 	}
 
+	@Override
+	public String toString() {
+		return modelo + " - " + fabricante;
+	}
+
 }

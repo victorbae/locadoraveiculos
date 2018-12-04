@@ -56,7 +56,7 @@ public class ClienteBanco implements ClienteDAO {
 	@Override
 	public void excluir(Cliente dado) {
 		try {
-			String sql = "delete from clientes where id = ?";
+			String sql = "delete from clientes where codigocliente = ?";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigoCliente());
 			stmt.executeUpdate();
