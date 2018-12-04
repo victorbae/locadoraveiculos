@@ -84,5 +84,4 @@ public class ControllerNewCliente {
 		cliente.setTelefone(tfTelefone.getText());
 		cliente.setRg(tfRG.getText());
 	}
-
 }
