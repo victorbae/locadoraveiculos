@@ -48,7 +48,7 @@ public class ControllerVeiculos {
 	private TableColumn<Veiculo, String> tcEstado;
 
 	@FXML
-	private TableColumn<Veiculo, Funcionario> tcPropretario;
+	private TableColumn<Veiculo, Funcionario> tcProprietario;
 
 	@FXML
 	private TableColumn<Veiculo, String> tcStatus;
@@ -72,7 +72,7 @@ public class ControllerVeiculos {
 		tcIdVeiculo.setCellValueFactory(new PropertyValueFactory<>("codigoveiculo"));
 		tcModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
 		tcPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
-		tcPropretario.setCellValueFactory(new PropertyValueFactory<>("proprietario"));
+		tcProprietario.setCellValueFactory(new PropertyValueFactory<>("proprietario"));
 		tcStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 		tcVeiculos.setItems(FXCollections.observableArrayList(veiculoDAO.listar()));
 	}

@@ -62,7 +62,7 @@ public class FuncionarioBanco implements FuncionarioDAO {
 	@Override
 	public void excluir(Funcionario dado) {
 		try {
-			String sql = "delete from funcionarios where id = ?";
+			String sql = "delete from funcionarios where codigofuncionario = ?";
 			PreparedStatement stmt = ConexaoPrincipal.retornaconecao().prepareStatement(sql);
 			stmt.setInt(1, dado.getCodigoFuncionario());
 			stmt.executeUpdate();
@@ -86,7 +86,7 @@ public class FuncionarioBanco implements FuncionarioDAO {
 				funcionario.setCpf(rs.getString("cpf"));
 				funcionario.setRg(rs.getString("rg"));
 				funcionario.setCnh(rs.getString("cnh"));
-				funcionario.setDatanascimento(LocalDate.parse(rs.getString("data_nascimento")));
+				funcionario.setDatanascimento(LocalDate.parse(rs.getString("idade")));
 				funcionario.setTelefone(rs.getString("telefone"));
 				funcionario.setEmail(rs.getString("email"));
 				funcionario.setFilial(EstaticosParaFuncionario.achaFilial(rs.getInt("filial")));
