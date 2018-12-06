@@ -6,13 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerClientes">
+<AnchorPane stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerClientes">
    <children>
-      <Pane prefHeight="600.0" prefWidth="1000.0">
+      <Pane prefHeight="620.0" prefWidth="1000.0" styleClass="fundoMasculo" stylesheets="@../principal/application.css">
          <children>
-            <Button fx:id="btEditCliente" layoutX="774.0" layoutY="31.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar Cliente" />
+            <Button fx:id="btEditCliente" disable="true" layoutX="764.0" layoutY="42.0" mnemonicParsing="false" onAction="#editarCliente" styleClass="btn-primary" text="Editar Cliente" />
+            <Button fx:id="btExcluirCliente" layoutX="646.0" layoutY="42.0" mnemonicParsing="false" onAction="#excluirCliente" styleClass="btn-danger" text="Excluir Cliente" />
+            <Button fx:id="btNewCliente" layoutX="878.0" layoutY="42.0" mnemonicParsing="false" onAction="#adicionarCliente" styleClass="btn-success" text="Novo Cliente" />
          </children></Pane>
-      <Button fx:id="btNewCliente" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#adicionarCliente" text="Cadastrar Cliente" />
       <TableView fx:id="tcCliente" layoutX="14.0" layoutY="81.0" prefHeight="489.0" prefWidth="968.0">
          <columns>
             <TableColumn fx:id="tcIdCliente" prefWidth="32.0" text="#" />
@@ -26,6 +27,5 @@
             <TableColumn fx:id="tcLocando" prefWidth="111.0" text="Locando?" />
          </columns>
       </TableView>
-      <Button fx:id="btExcluirCliente" layoutX="883.0" layoutY="31.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir Cliente" />
    </children>
 </AnchorPane>

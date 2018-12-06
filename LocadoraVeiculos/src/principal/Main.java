@@ -17,10 +17,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		try {
 			root = (BorderPane) FXMLLoader.load(getClass().getResource("/fxmls/TelaPai.fxml"));
-			Scene scene = new Scene(root, 1000, 650);
-			scene.getStylesheets().add(getClass().getResource("/fxmls/Style.css").toExternalForm());
-			primaryStage.setTitle("Login");
+			Scene scene = new Scene(root, 1000, 620);
+			primaryStage.setTitle("Locadora Veiculos");
 			primaryStage.setScene(scene);
+			scene.getStylesheets().add(getClass().getResource("/principal/application.css").toExternalForm());
 			primaryStage.getIcons().add(new Image("file:/Imagens/imagembackground.jpg"));
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("/fxmls/TelaLogin.fxml"));

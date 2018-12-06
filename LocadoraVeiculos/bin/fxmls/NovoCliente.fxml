@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -12,67 +8,67 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerNewCliente">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerNewCliente">
    <children>
-      <Pane prefHeight="600.0" prefWidth="1000.0">
+      <Pane prefHeight="620.0" prefWidth="1000.0" styleClass="fundoMasculo" stylesheets="@../principal/application.css">
          <children>
-            <Label layoutX="87.0" layoutY="122.0" text="Nome:">
+            <Label layoutX="110.0" layoutY="79.0" styleClass="labelId" text="Nome:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="93.0" layoutY="218.0" text="CPF:">
+            <Label layoutX="115.0" layoutY="156.0" styleClass="labelId" text="CPF:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="95.0" layoutY="312.0" text="RG:">
+            <Label layoutX="119.0" layoutY="233.0" styleClass="labelId" text="RG:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="397.0" text="CNH:">
+            <Label layoutX="113.0" layoutY="302.0" styleClass="labelId" text="CNH:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="543.0" layoutY="401.0" text="Endereço:">
+            <Label layoutX="565.0" layoutY="303.0" styleClass="labelId" text="Endereço:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="498.0" layoutY="114.0" text="Data Nascimento:">
+            <Label layoutX="510.0" layoutY="80.0" styleClass="labelId" text="Data Nascimento:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="545.0" layoutY="218.0" text="Telefone:">
+            <Label layoutX="568.0" layoutY="156.0" styleClass="labelId" text="Telefone:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="559.0" layoutY="312.0" text="E-mail:">
+            <Label layoutX="585.0" layoutY="229.0" styleClass="labelId" text="E-mail:">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dtDataNascimento" layoutX="651.0" layoutY="107.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfNome" layoutX="191.0" layoutY="115.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfCPF" layoutX="191.0" layoutY="211.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfRG" layoutX="191.0" layoutY="305.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfCNH" layoutX="187.0" layoutY="390.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfTelefone" layoutX="651.0" layoutY="211.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfEmail" layoutX="651.0" layoutY="305.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfEndereco" layoutX="651.0" layoutY="394.0" prefHeight="30.0" prefWidth="200.0" />
-            <Button fx:id="btnCancelar" layoutX="651.0" layoutY="500.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-            <Button fx:id="btnSalvar" layoutX="781.0" layoutY="500.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-            <Label fx:id="lbCNH" layoutX="188.0" layoutY="422.0" textFill="RED" />
-            <Label fx:id="lbCPF" layoutX="192.0" layoutY="243.0" textFill="RED" />
-            <Label fx:id="lbRG" layoutX="192.0" layoutY="337.0" textFill="RED" />
-            <Label fx:id="lbTelefone" layoutX="652.0" layoutY="243.0" textFill="RED" />
-            <Label fx:id="lbEndereco" layoutX="652.0" layoutY="426.0" textFill="RED" />
-            <Label fx:id="lbNome" layoutX="192.0" layoutY="147.0" textFill="RED" />
-            <Label fx:id="lbDT" layoutX="652.0" layoutY="139.0" textFill="RED" />
+            <DatePicker fx:id="dtDataNascimento" layoutX="642.0" layoutY="74.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfNome" layoutX="165.0" layoutY="74.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfCPF" layoutX="165.0" layoutY="151.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfRG" layoutX="165.0" layoutY="223.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfCNH" layoutX="165.0" layoutY="297.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfTelefone" layoutX="642.0" layoutY="151.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfEmail" layoutX="642.0" layoutY="224.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfEndereco" layoutX="643.0" layoutY="297.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <Button fx:id="btnCancelar" layoutX="402.0" layoutY="393.0" mnemonicParsing="false" onAction="#cancelar" styleClass="btn-danger" text="Cancelar" />
+            <Button fx:id="btnSalvar" layoutX="544.0" layoutY="393.0" mnemonicParsing="false" onAction="#salvar" styleClass="btn-success" text="Salvar" />
+            <Label fx:id="lbCNH" layoutX="169.0" layoutY="337.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label fx:id="lbCPF" layoutX="165.0" layoutY="183.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label fx:id="lbRG" layoutX="165.0" layoutY="260.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label fx:id="lbTelefone" layoutX="642.0" layoutY="192.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label fx:id="lbEndereco" layoutX="651.0" layoutY="337.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label fx:id="lbNome" layoutX="165.0" layoutY="115.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label fx:id="lbDT" layoutX="642.0" layoutY="115.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
          </children>
       </Pane>
    </children>

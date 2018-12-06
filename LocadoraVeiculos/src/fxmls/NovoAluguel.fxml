@@ -9,49 +9,48 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controllers.ControllerNewAluguel">
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerNewAluguel">
    <children>
-      <Pane prefHeight="600.0" prefWidth="1000.0">
+      <Pane prefHeight="620.0" prefWidth="1000.0" styleClass="fundoMasculo" stylesheets="@../principal/application.css">
          <children>
-            <Label layoutX="125.0" layoutY="133.0" text="Cliente:" textAlignment="CENTER">
+            <Label layoutX="102.0" layoutY="91.0" styleClass="labelId" text="Cliente:" textAlignment="CENTER">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="593.0" layoutY="133.0" text="Veiculo:" textAlignment="CENTER">
+            <Label layoutX="581.0" layoutY="93.0" styleClass="labelId" text="Veiculo:" textAlignment="CENTER">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="102.0" layoutY="246.0" text="Data Inicio:" textAlignment="CENTER">
+            <Label layoutX="90.0" layoutY="180.0" styleClass="labelId" text="Data Inicio:" textAlignment="CENTER">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="581.0" layoutY="246.0" text="Data Fim:" textAlignment="CENTER">
+            <Label layoutX="575.0" layoutY="180.0" styleClass="labelId" text="Data Fim:" textAlignment="CENTER">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="116.0" layoutY="357.0" text="Situaçao:" textAlignment="CENTER">
+            <Label layoutX="96.0" layoutY="257.0" styleClass="labelId" text="Situaçao:" textAlignment="CENTER">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="570.0" layoutY="357.0" text="Valor Total:" textAlignment="CENTER">
+            <Label layoutX="563.0" layoutY="258.0" styleClass="labelId" text="Valor Total:" textAlignment="CENTER">
                <font>
                   <Font name="Tahoma" size="13.0" />
                </font>
             </Label>
-            <DatePicker fx:id="dtDataInicio" layoutX="225.0" layoutY="239.0" prefHeight="30.0" prefWidth="200.0" />
-            <DatePicker fx:id="dtDataFim" layoutX="684.0" layoutY="239.0" prefHeight="30.0" prefWidth="200.0" />
-            <ComboBox fx:id="cbxVeiculo" layoutX="684.0" layoutY="126.0" prefHeight="30.0" prefWidth="200.0" />
-            <ComboBox fx:id="cbxSituacao" layoutX="225.0" layoutY="350.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="tfValorTotal" layoutX="684.0" layoutY="350.0" prefHeight="30.0" prefWidth="200.0" />
-            <ComboBox fx:id="cbxCliente" layoutX="225.0" layoutY="126.0" prefHeight="30.0" prefWidth="200.0" />
-            <Button fx:id="btnCancelar" layoutX="684.0" layoutY="514.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-            <Button fx:id="btnSalvar" layoutX="836.0" layoutY="514.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+            <DatePicker fx:id="dtDataInicio" layoutX="175.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <DatePicker fx:id="dtDataFim" layoutX="645.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <ComboBox fx:id="cbxVeiculo" layoutX="645.0" layoutY="87.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <ComboBox fx:id="cbxSituacao" layoutX="175.0" layoutY="252.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <TextField fx:id="tfValorTotal" layoutX="645.0" layoutY="252.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <ComboBox fx:id="cbxCliente" layoutX="175.0" layoutY="86.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
+            <Button fx:id="btnCancelar" layoutX="436.0" layoutY="387.0" mnemonicParsing="false" onAction="#cancelar" styleClass="btn-danger" text="Cancelar" />
+            <Button fx:id="btnSalvar" layoutX="589.0" layoutY="387.0" mnemonicParsing="false" onAction="#salvar" styleClass="btn-success" text="Salvar" />
          </children>
       </Pane>
    </children>
