@@ -40,7 +40,7 @@ public class ControllerNewCliente {
 
 	@FXML
 	private Label lbRG;
-	
+
 	@FXML
 	private Label lbCNH;
 	@FXML
@@ -118,25 +118,25 @@ public class ControllerNewCliente {
 		} else {
 			lbDT.setText("");
 		}
-		if (!tfCPF.getText().matches("^[a-zA-Z]+$")) {
+		if (!tfCPF.getText().matches("^[0-9]+$")) {
 			lbCPF.setText("Preencha este Campo!");
 			cont = 1;
 		} else {
 			lbCPF.setText("");
 		}
-		if (!tfCNH.getText().matches("^[a-zA-Z]+$")) {
+		if (!tfCNH.getText().matches("^[0-9]+$")) {
 			lbCNH.setText("Preencha este Campo!");
 			cont = 1;
 		} else {
 			lbCNH.setText("");
 		}
-		if (!tfRG.getText().matches("^[a-zA-Z]+$")) {
+		if (!tfRG.getText().matches("^[0-9]+$")) {
 			lbRG.setText("Preencha este Campo!");
 			cont = 1;
 		} else {
 			lbRG.setText("");
 		}
-		if (!tfTelefone.getText().matches("^[a-zA-Z]+$")) {
+		if (!tfTelefone.getText().matches("^[0-9]+$")) {
 			lbTelefone.setText("Preencha este Campo!");
 			cont = 1;
 		} else {
