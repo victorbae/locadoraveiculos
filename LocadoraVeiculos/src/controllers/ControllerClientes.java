@@ -63,6 +63,7 @@ public class ControllerClientes {
 
 	@FXML
 	private void initialize() {
+		tcIdCliente.setCellValueFactory(new PropertyValueFactory<>("codigoCliente"));
 		tcNomeCliente.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tcCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		tcCNH.setCellValueFactory(new PropertyValueFactory<>("cnh"));

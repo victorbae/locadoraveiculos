@@ -19,7 +19,7 @@
                   <TableColumn fx:id="tcModelo" prefWidth="101.0" text="Modelo" />
                   <TableColumn fx:id="tcFabricante" prefWidth="162.0" text="Fabricante" />
                   <TableColumn fx:id="tcEstado" prefWidth="75.0" text="Estado" />
-                  <TableColumn fx:id="tcPropretario" prefWidth="145.0" text="Propretário" />
+                  <TableColumn fx:id="tcProprietario" prefWidth="145.0" text="Proprietário" />
                   <TableColumn fx:id="tcStatus" prefWidth="105.0" text="Status" />
                </columns>
             </TableView>
