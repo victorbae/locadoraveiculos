@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -65,12 +64,12 @@
             <TextField fx:id="tfStatus" layoutX="646.0" layoutY="292.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
             <DatePicker fx:id="dtAnoFabricacao" layoutX="194.0" layoutY="160.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
             <ComboBox fx:id="cbxFuncPropietario" layoutX="646.0" layoutY="228.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
-            <ColorPicker fx:id="cpCor" layoutX="646.0" layoutY="84.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
             <Button fx:id="btnCancelar" layoutX="439.0" layoutY="380.0" mnemonicParsing="false" onAction="#cancelar" styleClass="btn-danger" text="Cancelar" />
             <Button fx:id="btnSalvar" layoutX="591.0" layoutY="380.0" mnemonicParsing="false" onAction="#salvar" styleClass="btn-success" text="Salvar" />
             <Label fx:id="lbFAB" layoutX="195.0" layoutY="260.0" prefHeight="17.0" prefWidth="178.0" textFill="RED" />
             <Label fx:id="lbCor" layoutX="646.0" layoutY="119.0" prefHeight="17.0" prefWidth="135.0" textFill="RED" />
             <Label fx:id="lbModelo" layoutX="195.0" layoutY="324.0" prefHeight="17.0" prefWidth="214.0" textFill="RED" />
+            <TextField fx:id="tfCor" layoutX="643.0" layoutY="86.0" prefHeight="30.0" prefWidth="200.0" styleClass="inputText" />
          </children>
       </Pane>
    </children>

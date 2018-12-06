@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -54,7 +53,7 @@ public class ControllerNewVeiculo {
 	private ComboBox<Funcionario> cbxFuncPropietario;
 
 	@FXML
-	private ColorPicker cpCor;
+	private TextField tfCor;
 
 	@FXML
 	private Button btnCancelar;
@@ -105,7 +104,7 @@ public class ControllerNewVeiculo {
 		}
 		veiculo.setFabricante(tfFabricante.getText());
 		veiculo.setModelo(tfModelo.getText());
-		veiculo.setCor(cpCor.getId());
+		veiculo.setCor(tfCor.getText());
 		veiculo.setEstado(tfEstado.getText());
 		veiculo.setProprietario(cbxFuncPropietario.getValue());
 		veiculo.setStatus(tfStatus.getText());
@@ -120,7 +119,7 @@ public class ControllerNewVeiculo {
 
 	public boolean validaInsercao() {
 		int cont = 0;
-		if (cpCor.getValue() == null || cpCor.getValue().hashCode() == 0xffffffff) {
+		if (tfCor.getText().isEmpty() || tfCor.getText() == null) {
 			lbCor.setText("Preencha este Campo!");
 			cont = 1;
 		} else {
