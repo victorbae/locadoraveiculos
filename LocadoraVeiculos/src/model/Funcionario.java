@@ -59,5 +59,4 @@ public class Funcionario extends Pessoa implements Serializable {
 	public String toString() {
 		return getNome();
 	}
-
 }

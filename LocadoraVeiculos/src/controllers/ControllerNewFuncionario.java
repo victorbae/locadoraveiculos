@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.Funcionario;
 import principal.Main;
 
 public class ControllerNewFuncionario {
@@ -38,10 +39,15 @@ public class ControllerNewFuncionario {
 	private TextField tfEndereco;
 
 	@FXML
+	private TextField tfCargo;
+
+	@FXML
 	private Button btnCancelar;
 
 	@FXML
 	private Button btnSalvar;
+
+	Funcionario funcionario = new Funcionario();
 
 	@FXML
 	void cancelar(ActionEvent event) {
@@ -62,5 +68,11 @@ public class ControllerNewFuncionario {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+	}
+
+	public void montaFuncionario() {
+		funcionario = new Funcionario();
+		funcionario.setCargo(tfCargo.getText());
+
 	}
 }

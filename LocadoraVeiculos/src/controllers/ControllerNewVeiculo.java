@@ -47,6 +47,11 @@ public class ControllerNewVeiculo {
 	private Label lbFAB;
 
 	@FXML
+	private Label lbProp;
+	@FXML
+	private Label lbData;
+
+	@FXML
 	private DatePicker dtAnoFabricacao;
 
 	@FXML
@@ -120,22 +125,34 @@ public class ControllerNewVeiculo {
 	public boolean validaInsercao() {
 		int cont = 0;
 		if (tfCor.getText().isEmpty() || tfCor.getText() == null) {
-			lbCor.setText("Preencha este Campo!");
+			lbCor.setText("Dados Vazios ou Inválidos!");
 			cont = 1;
 		} else {
 			lbCor.setText("");
 		}
 		if (!tfModelo.getText().matches("^[a-zA-Z]+$")) {
-			lbModelo.setText("Preencha este Campo!");
+			lbModelo.setText("Dados Vazios ou Inválidos!");
 			cont = 1;
 		} else {
 			lbModelo.setText("");
 		}
+		if (dtAnoFabricacao.getValue() == null) {
+			lbData.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbData.setText("");
+		}
 		if (!tfFabricante.getText().matches("^[a-zA-Z]+$")) {
-			lbFAB.setText("Preencha este Campo!");
+			lbFAB.setText("Dados Vazios ou Inválidos!");
 			cont = 1;
 		} else {
 			lbFAB.setText("");
+		}
+		if (cbxFuncPropietario.getValue() == null) {
+			lbProp.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbProp.setText("");
 		}
 		if (cont > 0) {
 			return false;

@@ -65,7 +65,7 @@ public class ControllerFuncionarios {
 
 	public void telaNewFuncionario() {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/fxmls/NovaFilial.fxml"));
+		loader.setLocation(getClass().getResource("/fxmls/NovoFuncionario.fxml"));
 		try {
 			AnchorPane agenciaView = (AnchorPane) loader.load();
 			Main.root.setCenter(agenciaView);

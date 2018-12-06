@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import model.Aluguel;
 import model.Cliente;
@@ -49,6 +50,21 @@ public class ControllerNewAluguel {
 	@FXML
 	private Button btnSalvar;
 
+	@FXML
+	private Label lbCliente;
+
+	@FXML
+	private Label lbSituacao;
+
+	@FXML
+	private Label lbVeiculo;
+
+	@FXML
+	private Label lbDataFim;
+
+	@FXML
+	private Label lbDataInicio;
+
 	private Aluguel aluguel;
 	private AluguelDAO aluguelDAO = new AluguelBanco();
 	private VeiculoDAO veiculodao = new VeiculoBanco();
@@ -66,9 +82,11 @@ public class ControllerNewAluguel {
 
 	@FXML
 	void salvar(ActionEvent event) {
-		preecheAluguel();
-		aluguelDAO.inserir(aluguel);
-		voltarTela();
+		if (validaInsercao()) {
+			preecheAluguel();
+			aluguelDAO.inserir(aluguel);
+			voltarTela();
+		}
 	}
 
 	public void voltarTela() {
@@ -103,6 +121,44 @@ public class ControllerNewAluguel {
 		}
 
 		cbxSituacao.getItems().add("EM ANDAMENTO");
+	}
+
+	public boolean validaInsercao() {
+		int cont = 0;
+		if (cbxCliente.getValue() == null) {
+			lbCliente.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbCliente.setText("");
+		}
+		if (cbxVeiculo.getValue() == null) {
+			lbVeiculo.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbVeiculo.setText("");
+		}
+		if (cbxSituacao.getValue() == null) {
+			lbSituacao.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbSituacao.setText("");
+		}
+		if (dtDataFim.getValue() == null) {
+			lbDataFim.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbDataFim.setText("");
+		}
+		if (dtDataInicio.getValue() == null) {
+			lbDataInicio.setText("Dados Vazios ou Inválidos!");
+			cont = 1;
+		} else {
+			lbDataInicio.setText("");
+		}
+		if (cont > 0) {
+			return false;
+		}
+		return true;
 	}
 
 }

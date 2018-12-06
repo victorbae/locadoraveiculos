@@ -106,44 +106,44 @@ public class ControllerNewCliente {
 
 	public boolean validaInsercao() {
 		int cont = 0;
-		if (!tfNome.getText().matches("^[a-zA-Z]+$")) {
-			lbNome.setText("Preencha este Campo!");
+		if (tfNome.getText().isEmpty() || tfNome.getText() == null) {
+			lbNome.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbNome.setText("");
 		}
 		if (dtDataNascimento.getValue() == null) {
-			lbDT.setText("Preencha este Campo!");
+			lbDT.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbDT.setText("");
 		}
 		if (!tfCPF.getText().matches("^[0-9]+$")) {
-			lbCPF.setText("Preencha este Campo!");
+			lbCPF.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbCPF.setText("");
 		}
 		if (!tfCNH.getText().matches("^[0-9]+$")) {
-			lbCNH.setText("Preencha este Campo!");
+			lbCNH.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbCNH.setText("");
 		}
 		if (!tfRG.getText().matches("^[0-9]+$")) {
-			lbRG.setText("Preencha este Campo!");
+			lbRG.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbRG.setText("");
 		}
 		if (!tfTelefone.getText().matches("^[0-9]+$")) {
-			lbTelefone.setText("Preencha este Campo!");
+			lbTelefone.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbTelefone.setText("");
 		}
-		if (!tfEndereco.getText().matches("^[a-zA-Z]+$")) {
-			lbEndereco.setText("Preencha este Campo!");
+		if (tfEndereco.getText().isEmpty() || tfEndereco.getText() == null) {
+			lbEndereco.setText("Dados Vazios ou Inválidos");
 			cont = 1;
 		} else {
 			lbEndereco.setText("");
