@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
@@ -35,7 +36,23 @@ public class ControllerNewCliente {
 	private TextField tfTelefone;
 
 	@FXML
+	private Label lbCPF;
+
+	@FXML
+	private Label lbRG;
+	
+	@FXML
+	private Label lbCNH;
+	@FXML
+	private Label lbTelefone;
+	@FXML
+	private Label lbEndereco;
+	@FXML
+	private Label lbDT;
+	@FXML
 	private TextField tfEmail;
+	@FXML
+	private Label lbNome;
 
 	@FXML
 	private TextField tfEndereco;
@@ -57,8 +74,10 @@ public class ControllerNewCliente {
 	@FXML
 	void salvar(ActionEvent event) {
 		populaCliente();
-		clienteDao.inserir(cliente);
-		voltarClientes();
+		if (validaInsercao()) {
+			clienteDao.inserir(cliente);
+			voltarClientes();
+		}
 	}
 
 	public void voltarClientes() {
@@ -83,5 +102,55 @@ public class ControllerNewCliente {
 		cliente.setNome(tfNome.getText());
 		cliente.setTelefone(tfTelefone.getText());
 		cliente.setRg(tfRG.getText());
+	}
+
+	public boolean validaInsercao() {
+		int cont = 0;
+		if (!tfNome.getText().matches("^[a-zA-Z]+$")) {
+			lbNome.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbNome.setText("");
+		}
+		if (dtDataNascimento.getValue() == null) {
+			lbDT.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbDT.setText("");
+		}
+		if (!tfCPF.getText().matches("^[a-zA-Z]+$")) {
+			lbCPF.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbCPF.setText("");
+		}
+		if (!tfCNH.getText().matches("^[a-zA-Z]+$")) {
+			lbCNH.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbCNH.setText("");
+		}
+		if (!tfRG.getText().matches("^[a-zA-Z]+$")) {
+			lbRG.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbRG.setText("");
+		}
+		if (!tfTelefone.getText().matches("^[a-zA-Z]+$")) {
+			lbTelefone.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbTelefone.setText("");
+		}
+		if (!tfEndereco.getText().matches("^[a-zA-Z]+$")) {
+			lbEndereco.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbEndereco.setText("");
+		}
+		if (cont > 0) {
+			return false;
+		}
+		return true;
 	}
 }

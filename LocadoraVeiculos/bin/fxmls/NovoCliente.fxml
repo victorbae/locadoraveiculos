@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -8,8 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="controllers.ControllerNewCliente">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerNewCliente">
    <children>
       <Pane prefHeight="600.0" prefWidth="1000.0">
          <children>
@@ -63,6 +66,13 @@
             <TextField fx:id="tfEndereco" layoutX="651.0" layoutY="394.0" prefHeight="30.0" prefWidth="200.0" />
             <Button fx:id="btnCancelar" layoutX="651.0" layoutY="500.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
             <Button fx:id="btnSalvar" layoutX="781.0" layoutY="500.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+            <Label fx:id="lbCNH" layoutX="188.0" layoutY="422.0" textFill="RED" />
+            <Label fx:id="lbCPF" layoutX="192.0" layoutY="243.0" textFill="RED" />
+            <Label fx:id="lbRG" layoutX="192.0" layoutY="337.0" textFill="RED" />
+            <Label fx:id="lbTelefone" layoutX="652.0" layoutY="243.0" textFill="RED" />
+            <Label fx:id="lbEndereco" layoutX="652.0" layoutY="426.0" textFill="RED" />
+            <Label fx:id="lbNome" layoutX="192.0" layoutY="147.0" textFill="RED" />
+            <Label fx:id="lbDT" layoutX="652.0" layoutY="139.0" textFill="RED" />
          </children>
       </Pane>
    </children>

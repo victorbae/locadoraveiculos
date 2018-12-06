@@ -14,6 +14,7 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import model.Funcionario;
 import model.Veiculo;
@@ -35,6 +36,15 @@ public class ControllerNewVeiculo {
 
 	@FXML
 	private TextField tfStatus;
+
+	@FXML
+	private Label lbCor;
+
+	@FXML
+	private Label lbModelo;
+
+	@FXML
+	private Label lbFAB;
 
 	@FXML
 	private DatePicker dtAnoFabricacao;
@@ -68,8 +78,11 @@ public class ControllerNewVeiculo {
 	@FXML
 	void salvar(ActionEvent event) {
 		preencheveiculo();
-		veiculodao.inserir(veiculo);
-		voltarVeiculos();
+		if (validaInsercao()) {
+			veiculodao.inserir(veiculo);
+			voltarVeiculos();
+		}
+
 	}
 
 	public void voltarVeiculos() {
@@ -86,7 +99,9 @@ public class ControllerNewVeiculo {
 	void preencheveiculo() {
 		veiculo = new Veiculo();
 		veiculo.setPlaca(tfPlaca.getText());
-		veiculo.setAnofabricacao(Date.valueOf(dtAnoFabricacao.getValue()));
+		if (dtAnoFabricacao.getValue() != null) {
+			veiculo.setAnofabricacao(Date.valueOf(dtAnoFabricacao.getValue()));
+		}
 		veiculo.setFabricante(tfFabricante.getText());
 		veiculo.setModelo(tfModelo.getText());
 		veiculo.setCor(cpCor.getId());
@@ -108,5 +123,31 @@ public class ControllerNewVeiculo {
 		cbxFuncPropietario.getItems().add(func);
 		cbxFuncPropietario.getItems().add(func2);
 		cbxFuncPropietario.getItems().add(func3);
+	}
+
+	public boolean validaInsercao() {
+		int cont = 0;
+		if (cpCor.getValue() == null || cpCor.getValue().hashCode() == 0xffffffff) {
+			lbCor.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbCor.setText("");
+		}
+		if (!tfModelo.getText().matches("^[a-zA-Z]+$")) {
+			lbModelo.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbModelo.setText("");
+		}
+		if (!tfFabricante.getText().matches("^[a-zA-Z]+$")) {
+			lbFAB.setText("Preencha este Campo!");
+			cont = 1;
+		} else {
+			lbFAB.setText("");
+		}
+		if (cont > 0) {
+			return false;
+		}
+		return true;
 	}
 }
